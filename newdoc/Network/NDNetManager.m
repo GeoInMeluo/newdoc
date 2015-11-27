@@ -106,7 +106,7 @@
                 [MBProgressHUD showError:@"授权问题"];
                 failure(@"授权问题");
             }else if([result[@"retcode"] isEqualToString:@"7"]){
-                [MBProgressHUD showError:@"列表为空"];
+//                [MBProgressHUD showError:@"列表为空"];
                 failure(@"列表为空");
             }else if([result[@"retcode"] isEqualToString:@"8"]){
                 
@@ -165,6 +165,8 @@
 }
 
 - (AFHTTPRequestOperation *)get:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSDictionary *result))success failure:(void (^)(NSString *error_message))failure{
+    
+    FLog(@"%@",URLString);
     
     if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"username"] isEqualToString:@""]){
         
@@ -239,7 +241,7 @@
                     [MBProgressHUD showError:@"授权问题"];
                     failure(@"授权问题");
                 }else if([result[@"retcode"] isEqualToString:@"7"]){
-                    [MBProgressHUD showError:@"列表为空"];
+//                    [MBProgressHUD showError:@"列表为空"];
                     failure(@"列表为空");
                 }else if([result[@"retcode"] isEqualToString:@"8"]){
                     

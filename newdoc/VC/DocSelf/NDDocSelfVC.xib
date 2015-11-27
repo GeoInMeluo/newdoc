@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="leftTable" destination="LGk-Vx-zDT" id="FAL-6X-MTC"/>
                 <outlet property="rightTable" destination="dQC-bG-PGG" id="nyR-5u-koj"/>
+                <outlet property="segTop" destination="9W4-AV-7Wr" id="5e6-T6-GoI"/>
                 <outlet property="vDetail" destination="VPo-AP-4cn" id="WfG-xJ-nL3"/>
                 <outlet property="vTop" destination="cP9-fK-cYE" id="Xvf-cI-Ymc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -59,18 +60,18 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LGk-Vx-zDT">
-                    <rect key="frame" x="0.0" y="0.0" width="97" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="160" height="568"/>
                     <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="97" id="6if-8n-dhU"/>
+                        <constraint firstAttribute="width" constant="160" id="6if-8n-dhU"/>
                     </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="IHm-1X-tIU"/>
                         <outlet property="delegate" destination="-1" id="f6y-18-y0z"/>
                     </connections>
                 </tableView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dQC-bG-PGG">
-                    <rect key="frame" x="97" y="0.0" width="223" height="568"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dQC-bG-PGG">
+                    <rect key="frame" x="160" y="0.0" width="160" height="568"/>
                     <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="wjk-pq-wnf"/>
@@ -89,7 +90,7 @@
                 <constraint firstAttribute="trailing" secondItem="dQC-bG-PGG" secondAttribute="trailing" id="mYx-1Z-Z8G"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="84" y="171"/>
+            <point key="canvasLocation" x="26" y="63"/>
         </view>
     </objects>
 </document>

@@ -64,7 +64,7 @@
 - (void)startRegistWithUsername:(NSString *)username andPassWord:(NSString *)pwd andVerifyCode:(NSString *)verifyCode andPhoneNumber:(NSString *)phoneNumber success:(void(^)())success failure:(void(^)(NSString *error_message))failure;
 
 //主动登陆
-- (void)startLoginWithUsername:(NSString *)username andPassWord:(NSString *)pwd success:(void(^)())success failure:(void(^)(NSString *error_message))failure;
+- (void)startLoginWithUsername:(NSString *)username andPassWord:(NSString *)pwd success:(void(^)(NDUser *user))success failure:(void(^)(NSString *error_message))failure;
 
 //绑定诊室
 - (void)startBindRoomWithRoomId:(NSString *)roomId success:(void(^)())success failure:(void(^)(NSString *error_message))failure;
@@ -137,4 +137,10 @@
 
 //浏览常见问题列表
 - (void)startGetCommonQAListAndSuccess:(void(^)(NSArray *qAs))success failure:(void(^)(NSString *error_message))failure;
+
+//搜索常见问题
+- (void)startGetQueryCommonQAListWithQuestion:(NSString *)question success:(void(^)(NSArray *qAs))success failure:(void(^)(NSString *error_message))failure;
+
+//发送反馈
+- (void)startSendCallbackWithContent:(NSString *)content success:(void(^)())success failure:(void(^)(NSString *error_message))failure;
 @end

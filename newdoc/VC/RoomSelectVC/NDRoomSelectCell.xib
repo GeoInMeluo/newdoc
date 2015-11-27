@@ -37,10 +37,10 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="主治：皮肤病、不孕不育、骨科、妇科、胸科、脑科、神经科等" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-8Y-46l">
-                                                <rect key="frame" x="43" y="40" width="308" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主治：皮肤病、不孕不育、骨科、妇科、胸科、脑科、神经科等" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-8Y-46l">
+                                                <rect key="frame" x="43" y="40" width="308" height="37"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="29" id="Koc-Zf-7IG"/>
+                                                    <constraint firstAttribute="height" constant="37" id="Koc-Zf-7IG"/>
                                                     <constraint firstAttribute="width" constant="182" id="VJE-Jt-E9A"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -69,7 +69,8 @@
                                             <constraint firstAttribute="height" constant="85" id="6HT-vy-IFP"/>
                                             <constraint firstItem="Lch-qI-i8d" firstAttribute="leading" secondItem="XE6-MW-R0E" secondAttribute="trailing" constant="8" id="9cP-HT-S66"/>
                                             <constraint firstItem="XE6-MW-R0E" firstAttribute="leading" secondItem="5wv-mi-Hi3" secondAttribute="leading" constant="15" id="9mW-PD-Os4"/>
-                                            <constraint firstItem="bmY-8Y-46l" firstAttribute="top" secondItem="Lch-qI-i8d" secondAttribute="bottom" constant="4" id="QIO-QT-Q7x"/>
+                                            <constraint firstItem="bmY-8Y-46l" firstAttribute="top" secondItem="Lch-qI-i8d" secondAttribute="bottom" constant="5.5" id="QIO-QT-Q7x"/>
+                                            <constraint firstAttribute="bottom" secondItem="bmY-8Y-46l" secondAttribute="bottom" constant="8" id="WJQ-Uf-68G"/>
                                             <constraint firstItem="dJf-DA-MEJ" firstAttribute="leading" secondItem="Lch-qI-i8d" secondAttribute="trailing" constant="8" id="ZJJ-Wi-jsl"/>
                                             <constraint firstItem="XE6-MW-R0E" firstAttribute="top" secondItem="5wv-mi-Hi3" secondAttribute="top" constant="15" id="dF9-Ek-pbK"/>
                                             <constraint firstItem="bmY-8Y-46l" firstAttribute="leading" secondItem="5wv-mi-Hi3" secondAttribute="leading" constant="43" id="e2S-fp-AYW"/>
@@ -86,8 +87,8 @@
                                                     <constraint firstAttribute="height" constant="12" id="el1-AS-Z6i"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广西省柳州市d区白沙路12号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVw-o3-Xwj">
-                                                <rect key="frame" x="41" y="11" width="128" height="12"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广西省柳州市d区白沙路12号" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVw-o3-Xwj">
+                                                <rect key="frame" x="41" y="12" width="128" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -95,13 +96,21 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="zVw-o3-Xwj" firstAttribute="centerY" secondItem="cc0-NA-G9Z" secondAttribute="centerY" id="3vg-XE-qj2"/>
                                             <constraint firstItem="cc0-NA-G9Z" firstAttribute="top" secondItem="gbU-PA-4kK" secondAttribute="top" constant="12" id="5qW-iN-YJt"/>
                                             <constraint firstAttribute="height" constant="34" id="Xqi-9I-zkh"/>
                                             <constraint firstItem="zVw-o3-Xwj" firstAttribute="leading" secondItem="cc0-NA-G9Z" secondAttribute="trailing" constant="8" id="YFm-yz-m9A"/>
                                             <constraint firstAttribute="trailing" secondItem="zVw-o3-Xwj" secondAttribute="trailing" constant="11" id="gi6-bC-b9b"/>
                                             <constraint firstItem="cc0-NA-G9Z" firstAttribute="leading" secondItem="gbU-PA-4kK" secondAttribute="leading" constant="24" id="hzp-DG-6aX"/>
-                                            <constraint firstItem="zVw-o3-Xwj" firstAttribute="top" secondItem="gbU-PA-4kK" secondAttribute="top" constant="11" id="rdq-NX-RMa"/>
+                                            <constraint firstAttribute="bottom" secondItem="zVw-o3-Xwj" secondAttribute="bottom" id="pNh-zc-73K"/>
+                                            <constraint firstItem="zVw-o3-Xwj" firstAttribute="top" secondItem="gbU-PA-4kK" secondAttribute="top" constant="5" id="rdq-NX-RMa"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="pNh-zc-73K"/>
+                                                <exclude reference="rdq-NX-RMa"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7E-kp-hhi">
                                         <rect key="frame" x="180" y="93" width="180" height="34"/>

@@ -317,7 +317,7 @@
         //注册成功后直接登陆
         if([[result allKeys] containsObject:@"retcode"]){
             if([result[@"retcode"] isEqualToString:@"0"]){
-                [weakself startLoginWithUsername:username andPassWord:pwd success:^{
+                [weakself startLoginWithUsername:username andPassWord:pwd success:^(NDUser *user){
                     
                     success();
                     
@@ -335,7 +335,7 @@
 
 
 //主动登陆
-- (void)startLoginWithUsername:(NSString *)username andPassWord:(NSString *)pwd success:(void(^)())success failure:(void(^)(NSString *error_message))failure{
+- (void)startLoginWithUsername:(NSString *)username andPassWord:(NSString *)pwd success:(void(^)(NDUser *user))success failure:(void(^)(NSString *error_message))failure{
     WEAK_SELF;
     
     [[NDCoreSession coreSession] logout];
@@ -1052,6 +1052,60 @@
         }
         
         
+        
+    } failure:^(NSString *error_message) {
+        
+        failure(error_message);
+        
+        
+    }];
+
+}
+
+
+//搜索常见问题
+- (void)startGetQueryCommonQAListWithQuestion:(NSString *)question success:(void(^)(NSArray *qAs))success failure:(void(^)(NSString *error_message))failure{
+    NSDictionary *param = @{};
+    
+    FLog(@"%@", question);
+    
+    [[NDNetManager sharedNetManager] get:[NSString stringWithFormat:@"/app/1/Faqs?query=%@", [SafeString(question) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] parameters:param success:^(NSDictionary *result) {
+        FLog(@"%@",result);
+        
+        
+        NSMutableArray *commonQAs = [NSMutableArray array];
+        
+        if([[result allKeys] containsObject:@"data"]){
+            if([[result[@"data"] allKeys] containsObject:@"subs"]){
+                for(id obj in result[@"data"][@"subs"]){
+                    NDCommonQA *qa = [NDCommonQA mj_objectWithKeyValues:obj];
+                    
+                    [commonQAs addObject:qa];
+                }
+                
+                success(commonQAs);
+            }
+        }
+        
+        
+        
+    } failure:^(NSString *error_message) {
+        
+        failure(error_message);
+        
+        
+    }];
+
+}
+
+//发送反馈
+- (void)startSendCallbackWithContent:(NSString *)content success:(void(^)())success failure:(void(^)(NSString *error_message))failure{
+    NSDictionary *param = @{@"content":SafeString(content)};
+    
+    [[NDNetManager sharedNetManager] post:@"/app/1/Feedbacks" parameters:param success:^(NSDictionary *result) {
+        FLog(@"%@",result);
+        
+        success();
         
     } failure:^(NSString *error_message) {
         

@@ -113,7 +113,7 @@
         return;
     }
     
-    [self startLoginWithUsername:self.tfUsername.text andPassWord:self.tfPassword.text success:^{
+    [self startLoginWithUsername:self.tfUsername.text andPassWord:self.tfPassword.text success:^(NDUser *user){
 
         [weakself loginUMWithUsername:[NDCoreSession coreSession].user.name andID:[NDCoreSession coreSession].nduid andIconUrl:[NDCoreSession coreSession].user.picture_url];
         
@@ -209,6 +209,8 @@
                     
                     [NDCoreSession coreSession].user = user;
                     
+                    FLog(@"%@", [NDCoreSession coreSession].user.name);
+                    
                     [self loginUMWithUsername:[NDCoreSession coreSession].user.name andID:[NDCoreSession coreSession].openId andIconUrl:[NDCoreSession coreSession].user.picture_url];
                     
                     NSString *tempPath =  NSTemporaryDirectory();
@@ -267,8 +269,13 @@
 - (void)loginUMWithUsername:(NSString *)username andID:(NSString *)ID andIconUrl:(NSString *)url{
 //    //把用户资料上传到友盟
     UMComUserAccount *userAccount = [[UMComUserAccount alloc] initWithSnsType:UMComSnsTypeSelfAccount];     //使用UMComSnsTypeSelfAccount代表自定义登录，该枚举类型必须和安卓SDK保持一致，否则会出现不能对应同一用户的问题
-    userAccount.usid = username;
+    
+    
+    ID = [ID stringByReplacingOccurrencesOfString:@" " withString:@""];
+    userAccount.usid = ID;
+    username = [username stringByReplacingOccurrencesOfString:@" " withString:@""];
     userAccount.name = username;
+    url = [url stringByReplacingOccurrencesOfString:@" " withString:@""];
     userAccount.icon_url = url; //登录用户头像
     // 将数据传递给友盟微社区SDK
     [UMComLoginManager finishLoginWithAccount:userAccount completion:^(NSArray *data, NSError *error) {

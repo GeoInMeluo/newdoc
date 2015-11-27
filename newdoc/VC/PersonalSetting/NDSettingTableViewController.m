@@ -8,6 +8,8 @@
 
 #import "NDSettingTableViewController.h"
 #import "UMComLoginManager.h"
+#import "NDAboutVC.h"
+#import "NDUserProtalcalVC.h"
 
 @interface NDSettingTableViewController ()<UIAlertViewDelegate>
 @property (strong, nonatomic) IBOutlet FormCell *cellProtocal;
@@ -37,7 +39,17 @@
 }
 
 - (void)initWithCells{
+    WEAK_SELF;
+    
     [self appendSection:@[self.cellProtocal,self.cellAbout] withHeader:nil];
+    
+    self.cellProtocal.callback  = ^(FormCell* sender,NSIndexPath * indexPath){
+        ShowVCWeak(NDAboutVC);
+    };
+    
+    self.cellAbout.callback  = ^(FormCell* sender,NSIndexPath * indexPath){
+        ShowVCWeak(NDUserProtalcalVC);
+    };
 }
 
 - (IBAction)btnLogout:(id)sender {

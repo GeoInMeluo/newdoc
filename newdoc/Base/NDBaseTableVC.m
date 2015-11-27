@@ -178,7 +178,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     FormSection *formSection = self.sections[indexPath.section];
     
-    if(formSection == nil){
+    if(formSection == nil || formSection.cells.count == 0){
         return 0;
     }
     
