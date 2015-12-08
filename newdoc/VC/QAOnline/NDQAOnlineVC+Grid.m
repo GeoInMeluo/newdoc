@@ -42,7 +42,7 @@ static ActionSheet *_sheet;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if(indexPath.item < self.imgs.count - 1)
+    if(indexPath.item < self.imgs.count - 1 && self.imgs.count > 1)
     {
         ActionSheet * sheet = [[ActionSheet alloc] initWithTitle:@"移除此图片？"
                                                         delegate:self

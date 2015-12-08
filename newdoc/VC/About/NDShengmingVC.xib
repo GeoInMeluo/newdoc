@@ -19,7 +19,7 @@
                     <rect key="frame" x="30" y="30" width="540" height="101.5"/>
                     <string key="text">鉴于新医集团公司以非人工检索方式、根据您键入的关键字自动生成到第三方网页的链接，除本公司注明之服务条款外，其他一切因使用新医健康这款产品而可能遭致的意外、疏忽、侵权及其造成的损失（包括因下载被搜索链接到的第三方网站内容而感染电脑病毒），新医集团对其概不负责，亦不承担任何法律责任。</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

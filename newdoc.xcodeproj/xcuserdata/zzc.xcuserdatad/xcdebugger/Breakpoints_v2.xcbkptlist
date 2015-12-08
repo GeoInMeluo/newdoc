@@ -19,62 +19,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "newdoc/Protalcal/NSObject+Protalcals.m"
-            timestampString = "470307946.860751"
+            filePath = "newdoc/VC/RoomDetail/NDRoomDetailDocCell.m"
+            timestampString = "470854948.908431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1074"
-            endingLineNumber = "1074"
-            landmarkName = "-startGetQueryCommonQAListWithQuestion:success:failure:"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-setDoctor:"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "newdoc/Protalcal/NSObject+Protalcals.m"
-            timestampString = "470307963.530596"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1080"
-            endingLineNumber = "1080"
-            landmarkName = "-startGetQueryCommonQAListWithQuestion:success:failure:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__78-[NSObject(Protalcals) startGetQueryCommonQAListWithQuestion:success:failure:]_block_invoke"
-                  moduleName = "newdoc"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zzc/Desktop/meluo/newdoc_ios/newdoc/Protalcal/NSObject+Protalcals.m"
-                  timestampString = "470312065.355394"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1080"
-                  endingLineNumber = "1080"
-                  offsetFromSymbolStart = "864">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__78-[NSObject(Protalcals) startGetQueryCommonQAListWithQuestion:success:failure:]_block_invoke"
-                  moduleName = "newdoc"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zzc/Desktop/meluo/newdoc_ios/newdoc/Protalcal/NSObject+Protalcals.m"
-                  timestampString = "470312065.355827"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1080"
-                  endingLineNumber = "1080"
-                  offsetFromSymbolStart = "880">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

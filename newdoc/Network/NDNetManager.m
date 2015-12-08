@@ -85,6 +85,7 @@
         if([[result allKeys] containsObject:@"authkey"]){
             [NDCoreSession coreSession].authKey = result[@"authkey"];
             [[NSUserDefaults standardUserDefaults] setObject:result[@"authkey"] forKey:@"authkey"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
         
         if([[result allKeys] containsObject:@"retcode"]){
@@ -117,8 +118,8 @@
                 
                 [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:nil];
                 
-//                [MBProgressHUD showError:@"登陆失败"];
-//                failure(@"登陆失败");
+                [MBProgressHUD showError:@"登陆失败"];
+                failure(@"登陆失败");
             }else if([result[@"retcode"] isEqualToString:@"9"]){
                 
                 //                    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[NDLoginVC new] animated:YES completion:nil];
@@ -207,7 +208,7 @@
         FLog(@"%@", responseObject);
         
         [MBProgressHUD hideHUD];
-        
+
         if(![responseObject isKindOfClass:[NSDictionary class]]){
             
             [MBProgressHUD showError:@"response格式错误"];
@@ -220,6 +221,7 @@
         if([[result allKeys] containsObject:@"authkey"]){
             [NDCoreSession coreSession].authKey = result[@"authkey"];
             [[NSUserDefaults standardUserDefaults] setObject:result[@"authkey"] forKey:@"authkey"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
         
         if([[result allKeys] containsObject:@"retcode"]){
@@ -252,8 +254,8 @@
                     
                     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:nil];
                     
-//                    [MBProgressHUD showError:@"登陆失败"];
-//                    failure(@"登陆失败");
+                    [MBProgressHUD showError:@"登陆失败"];
+                    failure(@"登陆失败");
                     
                     //构造SendAuthReq结构体
                     //                    SendAuthReq* req =[[SendAuthReq alloc ] init ];

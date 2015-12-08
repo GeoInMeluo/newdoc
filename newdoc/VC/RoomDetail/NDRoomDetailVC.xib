@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NDRoomDetailVC">
             <connections>
+                <outlet property="lblCurrentSubroom" destination="7bK-zk-fs8" id="LNe-8P-DVW"/>
                 <outlet property="lblRoomAddress" destination="waT-t7-aYm" id="Vyb-Yd-Pl8"/>
                 <outlet property="lblRoomGoodat" destination="Obn-md-TyU" id="TGv-NU-66Y"/>
                 <outlet property="lblRoomName" destination="rIX-Hw-vRd" id="X12-JZ-8T2"/>
@@ -110,7 +111,7 @@
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UoO-7t-DVr">
-                            <rect key="frame" x="8" y="148" width="359" height="475"/>
+                            <rect key="frame" x="8" y="148" width="359" height="519"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="3uC-WA-gJ8"/>
@@ -131,7 +132,7 @@
                         <constraint firstItem="UoO-7t-DVr" firstAttribute="top" secondItem="pcv-cI-0AJ" secondAttribute="bottom" constant="14" id="ujO-Q8-L9W"/>
                         <constraint firstItem="UoO-7t-DVr" firstAttribute="leading" secondItem="0lr-so-7eL" secondAttribute="leading" constant="8" id="vAi-zL-KYb"/>
                         <constraint firstAttribute="trailing" secondItem="nUr-vt-EYI" secondAttribute="trailing" constant="8" id="wDY-n8-n1G"/>
-                        <constraint firstAttribute="bottom" secondItem="UoO-7t-DVr" secondAttribute="bottom" constant="44" id="yzJ-CO-8Xx"/>
+                        <constraint firstAttribute="bottom" secondItem="UoO-7t-DVr" secondAttribute="bottom" id="yzJ-CO-8Xx"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -154,7 +155,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivK-p3-aLR">
-                    <rect key="frame" x="0.0" y="33" width="359" height="492"/>
+                    <rect key="frame" x="0.0" y="53" width="359" height="472"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="fbi-FK-i4k"/>
@@ -162,10 +163,10 @@
                     </connections>
                 </pickerView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUX-GE-hO2">
-                    <rect key="frame" x="305" y="0.0" width="46" height="30"/>
+                    <rect key="frame" x="305" y="0.0" width="46" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="46" id="86i-vO-IJz"/>
-                        <constraint firstAttribute="height" constant="30" id="Kvp-Iu-Htv"/>
+                        <constraint firstAttribute="height" constant="50" id="Kvp-Iu-Htv"/>
                     </constraints>
                     <state key="normal" title="确定"/>
                     <connections>

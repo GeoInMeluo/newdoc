@@ -56,20 +56,28 @@
         
     }];
     
+    [self startAllSubroomAndSuccess:^(NSArray *subrooms) {
+        weakself.subrooms = subrooms;
+        
+        if(subrooms.count == 0){
+            return;
+        }
+        
+        [weakself.pickerSubroom reloadComponent:0];
+    } failure:^(NSString *error_message) {
+        
+    }];
     
     [_collectionView registerClass:[NDPhotoGridCell class] forCellWithReuseIdentifier:@"NDPhotoGridCell"];
     [self.imgs addObject:[UIImage imageNamed:@"icon_img_plus"]];
     
     UUPhotoActionSheet *photoActionSheet = [[UUPhotoActionSheet alloc] initWithMaxSelected:5 weakSuper:self];
     self.photoActionSheet = photoActionSheet;
-    
     self.photoActionSheet.delegate = self;
     [self.navigationController.view addSubview:self.photoActionSheet];
     
     self.pickerSubroom.delegate = self;
     self.pickerSubroom.dataSource = self;
-    
-    self.subrooms = @[@"全科",@"骨科",@"内科",@"外科"];
     
     UIButton *button = [[UIButton alloc] init];
     [button setImage:[UIImage imageNamed:@"icon_qa_message"] forState:UIControlStateNormal];
@@ -85,6 +93,8 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+    WEAK_SELF;
     
     [self.vPickClass removeFromSuperview];
     
@@ -114,6 +124,11 @@
     }
     
     WEAK_SELF;
+    
+    NSMutableArray *tempArr = self.imgs;
+    if(self.imgs.count >0){
+        [tempArr removeLastObject];
+    }
     
     [self startUploadImageWithImages:self.imgs success:^(NSArray *imgUrls) {
         [weakself startSubmitQAWithContent:weakself.tvQuestion.text andSubroomId:weakself.currentSubroomIndex andSex:[NSString stringWithFormat:@"%zd", weakself.segGender.selectedSegmentIndex] andAge:weakself.tfAge.text andImgs:imgUrls success:^() {
@@ -178,7 +193,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 18;
+    return 32;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

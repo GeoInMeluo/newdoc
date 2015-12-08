@@ -38,4 +38,6 @@
 @property (nonatomic, copy) NSString *catalog_name;
 @property (nonatomic, copy) NSString *room_name;
 @property (nonatomic, copy) NSString *room_address;
+@property (nonatomic, copy) NSString *start_time;
+@property (nonatomic, copy) NSString *end_time;
 @end

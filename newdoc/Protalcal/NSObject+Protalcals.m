@@ -251,6 +251,8 @@
 
 }
 
+
+
 //得到医生详情(预约内使用的医生数据模型)
 - (void)startGetDoctorDetailWithDocId:(NSString *)docId andRoomId:(NSString *)roomId success:(void(^)( NDDoctorMorePreserveWindow *doctorMorePreserveWindow))success failure:(void(^)(NSString *error_message))failure{
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
@@ -662,8 +664,7 @@
 
 //得到用户关注的医生
 - (void)startGetAttetionDocsWithAndSuccess:(void(^)(NSArray *doc))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = @{ @"pageNum":@"0",
-                             @"pageCnt":@"10"};
+    NSDictionary *param = @{ @"pageNum":@"0"};
     
     
     [[NDNetManager sharedNetManager] get:@"/app/1/Focus?action=index" parameters:param success:^(NSDictionary *result) {
@@ -699,8 +700,7 @@
 
 //得到咨询列表
 - (void)startGetRefersWithAndSuccess:(void(^)(NSArray *refers))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = @{ @"pageNum":@"0",
-                             @"pageCnt":@"10"};
+    NSDictionary *param = @{ @"pageNum":@"0"};
     
     
     [[NDNetManager sharedNetManager] get:@"/app/1/Consults?action=index" parameters:param success:^(NSDictionary *result) {
@@ -720,8 +720,7 @@
 
 // 得到用户的预约
 - (void)startGetOrdersWithAndSuccess:(void(^)(NSArray *orders))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = @{ @"pageNum":@"0",
-                             @"pageCnt":@"10"};
+    NSDictionary *param = @{ @"pageNum":@"0"};
     
     
     [[NDNetManager sharedNetManager] get:@"/app/1/Appointments" parameters:param success:^(NSDictionary *result) {
@@ -747,8 +746,7 @@
 
 //得到用户的病历列表
 - (void)startGetEhrsWithAndSuccess:(void(^)(NSArray *ehrs))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = @{ @"pageNum":@"0",
-                             @"pageCnt":@"10"};
+    NSDictionary *param = @{ @"pageNum":@"0"};
     
     
     [[NDNetManager sharedNetManager] get:@"/app/1/Medhistorys?action=index" parameters:param success:^(NSDictionary *result) {
@@ -776,8 +774,7 @@
 
 //得到用户的绑定的诊室
 - (void)startGetBindRoomsWithAndSuccess:(void(^)(NSArray *roomNames))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = @{ @"pageNum":@"0",
-                             @"pageCnt":@"10"};
+    NSDictionary *param = @{ @"pageNum":@"0"};
     
     NSMutableArray *roomNames = [NSMutableArray array];
     
@@ -1029,7 +1026,7 @@
 
 //浏览常见问题列表
 - (void)startGetCommonQAListAndSuccess:(void(^)(NSArray *qAs))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = @{@"pageCnt":@"10",
+    NSDictionary *param = @{
                             @"pageNum":@"0",
                             @"catalogid":@"0"};
     
@@ -1114,5 +1111,55 @@
         
     }];
 
+}
+
+
+//用户发表评价
+- (void)startCommentDocWithOrderId:(NSString *)docId andRating:(NSString *)rating andContent:(NSString *)content success:(void(^)())success failure:(void(^)(NSString *error_message))failure{
+    
+    NSDictionary *param = @{@"id":SafeString(docId),
+                            @"doctor_rating":@"1",
+                            @"doctor_comment":SafeString(content)};
+    
+    [[NDNetManager sharedNetManager] post:[NSString stringWithFormat:@"/app/1/Appointments/%d", [docId intValue]] parameters:param success:^(NSDictionary *result) {
+        FLog(@"%@",result);
+        
+        success();
+        
+    } failure:^(NSString *error_message) {
+        
+        failure(error_message);
+        
+        
+    }];
+}
+
+//得到全部科室
+- (void)startAllSubroomAndSuccess:(void(^)(NSArray *subrooms))success failure:(void(^)(NSString *error_message))failure{
+    NSDictionary *param = @{};
+    
+    [[NDNetManager sharedNetManager] get:@"/app/1/catalog" parameters:param success:^(NSDictionary *result) {
+        FLog(@"%@",result);
+        
+        NSMutableArray *subrooms = [NSMutableArray array];
+        
+        if([[result allKeys] containsObject:@"data"]){
+            if([[result[@"data"] allKeys] containsObject:@"subs"]){
+                for(id obj in result[@"data"][@"subs"]){
+                    [subrooms addObject:obj[@"name"]];
+                }
+                
+                success(subrooms);
+            }
+        }
+
+        
+        
+    } failure:^(NSString *error_message) {
+        
+        failure(error_message);
+        
+        
+    }];
 }
 @end

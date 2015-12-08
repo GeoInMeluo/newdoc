@@ -25,9 +25,9 @@
     [self.btnHeadImg sd_setImageWithURL:[NSURL URLWithString:doctor.picture_url] forState:UIControlStateNormal];
     self.btnAttention.selected = doctor.isFocus;
 //    self.btnGo2Order
-    self.lblDocName.text = doctor.name;
-    self.lblDocDetail.text = [NSString stringWithFormat:@"(%@)",doctor.title];
-    self.lblGoodat.text = [NSString stringWithFormat:@"擅长：%@",doctor.goodat];
+    self.lblDocName.text = SafeString(doctor.name);
+    self.lblDocDetail.text = SafeString([NSString stringWithFormat:@"(%@)",doctor.title]);
+    self.lblGoodat.text = SafeString([NSString stringWithFormat:@"擅长：%@",doctor.goodat]);
     
 
     
@@ -41,7 +41,7 @@
     NSDateFormatter *dateFormat = [NSDateFormatter new];
     [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
     
-    self.lblCanOrder.text = [NSString stringWithFormat:@"最近可预约时间：%@",[dateFormat stringFromDate:nearlyDate]];
+    self.lblCanOrder.text = SafeString([NSString stringWithFormat:@"最近可预约时间：%@",[dateFormat stringFromDate:nearlyDate]]);
     
 //    NSMutableString *subrooms = [NSMutableString string];
 //    for(NDSubroom *subroom in doctor.catalog){
@@ -50,7 +50,7 @@
     
     NDSubroom *subroom = doctor.catalog[0];
     
-    self.lblSubroom.text = [NSString stringWithFormat:@"科室：%@",subroom.name];
+    self.lblSubroom.text = SafeString([NSString stringWithFormat:@"科室：%@",subroom.name]);
 }
 
 - (void)awakeFromNib {

@@ -54,6 +54,9 @@
 //得到医生的所有评论
 - (void)startGetDoctorCommentsWithDocId:(NSString *)docId success:(void(^)( NSArray *docComments))success failure:(void(^)(NSString *error_message))failure;
 
+//回复用户评论
+- (void)startReplyUserCommentWithComment:(NSString *)commentId andContent:(NSString *)content success:(void(^)())success failure:(void(^)(NSString *error_message))failure;
+
 //得到医生详情(预约内使用的医生数据模型)
 - (void)startGetDoctorDetailWithDocId:(NSString *)docId andRoomId:(NSString *)roomId success:(void(^)( NDDoctorMorePreserveWindow *doctorMorePreserveWindow))success failure:(void(^)(NSString *error_message))failure;
 
@@ -143,4 +146,12 @@
 
 //发送反馈
 - (void)startSendCallbackWithContent:(NSString *)content success:(void(^)())success failure:(void(^)(NSString *error_message))failure;
+
+//用户发表评价
+- (void)startCommentDocWithOrderId:(NSString *)docId andRating:(NSString *)rating andContent:(NSString *)content success:(void(^)())success failure:(void(^)(NSString *error_message))failure;
+
+//得到全部科室
+- (void)startAllSubroomAndSuccess:(void(^)(NSArray *subrooms))success failure:(void(^)(NSString *error_message))failure;
+
+
 @end

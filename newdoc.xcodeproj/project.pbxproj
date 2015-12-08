@@ -135,15 +135,12 @@
 		32C6583B1BD6EDA900490F37 /* NDPersonalEhrVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C658391BD6EDA900490F37 /* NDPersonalEhrVC.xib */; };
 		32C6583F1BD6EF6B00490F37 /* NDPersonalEhrCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6583D1BD6EF6B00490F37 /* NDPersonalEhrCell.m */; };
 		32C658401BD6EF6B00490F37 /* NDPersonalEhrCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C6583E1BD6EF6B00490F37 /* NDPersonalEhrCell.xib */; };
-		32D2E9EE1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2E9EC1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.m */; };
-		32D2E9EF1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D2E9ED1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.xib */; };
 		32D2E9F51BE7691A00DC12C5 /* NDPersonalOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2E9F31BE7691A00DC12C5 /* NDPersonalOrderVC.m */; };
 		32D2E9F61BE7691A00DC12C5 /* NDPersonalOrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D2E9F41BE7691A00DC12C5 /* NDPersonalOrderVC.xib */; };
 		32D2E9FA1BE7698D00DC12C5 /* NDPersonalOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2E9F81BE7698D00DC12C5 /* NDPersonalOrderCell.m */; };
 		32D2E9FB1BE7698D00DC12C5 /* NDPersonalOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D2E9F91BE7698D00DC12C5 /* NDPersonalOrderCell.xib */; };
 		32D2E9FE1BE9C56100DC12C5 /* NDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2E9FD1BE9C56100DC12C5 /* NDUser.m */; };
 		32D2EA011BE9DE6C00DC12C5 /* NDCoreSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2EA001BE9DE6C00DC12C5 /* NDCoreSession.m */; };
-		32D2EA031BE9F6A800DC12C5 /* testUserIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D2EA021BE9F6A800DC12C5 /* testUserIcon.png */; };
 		32D2EA051BE9F6CB00DC12C5 /* ic_tem_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D2EA041BE9F6CB00DC12C5 /* ic_tem_head.png */; };
 		32D2EA081BEAEF3C00DC12C5 /* FormSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2EA071BEAEF3C00DC12C5 /* FormSection.m */; };
 		32D2EA0F1BEB0AF100DC12C5 /* NDPersonalRegistBindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2EA0D1BEB0AF100DC12C5 /* NDPersonalRegistBindVC.m */; };
@@ -159,6 +156,8 @@
 		32D2EA351BEB2DBE00DC12C5 /* UUThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2EA281BEB2DBE00DC12C5 /* UUThumbnailView.m */; };
 		32D2EA361BEB2DBE00DC12C5 /* UUToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2EA2A1BEB2DBE00DC12C5 /* UUToolBarView.m */; };
 		32D2EA371BEB2DBE00DC12C5 /* UUZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2EA2C1BEB2DBE00DC12C5 /* UUZoomingScrollView.m */; };
+		32D59EB81C0C351900348018 /* NDPersonalOrderCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D59EB61C0C351900348018 /* NDPersonalOrderCommentVC.m */; };
+		32D59EB91C0C351900348018 /* NDPersonalOrderCommentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D59EB71C0C351900348018 /* NDPersonalOrderCommentVC.xib */; };
 		32D83AB31C08644B00E8271E /* UMComAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D839661C08644A00E8271E /* UMComAction.m */; };
 		32D83AB41C08644B00E8271E /* UMComLoginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D839671C08644A00E8271E /* UMComLoginAction.m */; };
 		32D83AB51C08644B00E8271E /* UMComLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D8396A1C08644A00E8271E /* UMComLoginManager.m */; };
@@ -312,6 +311,8 @@
 		32D84E681C0811E600FB3D54 /* NDUserProtalcalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D84E661C0811E600FB3D54 /* NDUserProtalcalVC.xib */; };
 		32D84E6C1C08120100FB3D54 /* NDShengmingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D84E6A1C08120100FB3D54 /* NDShengmingVC.m */; };
 		32D84E6D1C08120100FB3D54 /* NDShengmingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D84E6B1C08120100FB3D54 /* NDShengmingVC.xib */; };
+		32DF857E1C1584400087C9CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DF85801C1584400087C9CC /* LaunchScreen.storyboard */; };
+		32DF85821C1594BD0087C9CC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DF85811C1594BD0087C9CC /* Default-568h@2x.png */; };
 		32E2297E1BDF3C0000AF12E7 /* NDRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2297D1BDF3C0000AF12E7 /* NDRoom.m */; };
 		32E229E81BDF3C7F00AF12E7 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E229941BDF3C7F00AF12E7 /* MJRefreshAutoFooter.m */; };
 		32E229E91BDF3C7F00AF12E7 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E229961BDF3C7F00AF12E7 /* MJRefreshBackFooter.m */; };
@@ -437,6 +438,10 @@
 		32FD4DBA1BC82E320054D2EA /* NDBaseTabVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FD4DB91BC82E320054D2EA /* NDBaseTabVC.m */; };
 		32FD4DBF1BC82ECE0054D2EA /* NCCommunityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FD4DBD1BC82ECE0054D2EA /* NCCommunityVC.m */; };
 		32FD4DC01BC82ECE0054D2EA /* NCCommunityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FD4DBE1BC82ECE0054D2EA /* NCCommunityVC.xib */; };
+		32FFD7551C11AD1A003403DF /* NDRoomTempDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD7511C11AD1A003403DF /* NDRoomTempDetailVC.m */; };
+		32FFD7561C11AD1A003403DF /* NDRoomTempDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FFD7521C11AD1A003403DF /* NDRoomTempDetailVC.xib */; };
+		32FFD75A1C11ADB4003403DF /* NDRoomTempCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD7581C11ADB4003403DF /* NDRoomTempCellTableViewCell.m */; };
+		32FFD75B1C11ADB4003403DF /* NDRoomTempCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FFD7591C11ADB4003403DF /* NDRoomTempCellTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -663,9 +668,6 @@
 		32C6583C1BD6EF6B00490F37 /* NDPersonalEhrCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDPersonalEhrCell.h; sourceTree = "<group>"; };
 		32C6583D1BD6EF6B00490F37 /* NDPersonalEhrCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDPersonalEhrCell.m; sourceTree = "<group>"; };
 		32C6583E1BD6EF6B00490F37 /* NDPersonalEhrCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDPersonalEhrCell.xib; sourceTree = "<group>"; };
-		32D2E9EB1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDRoomTempCellTableViewCell.h; sourceTree = "<group>"; };
-		32D2E9EC1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDRoomTempCellTableViewCell.m; sourceTree = "<group>"; };
-		32D2E9ED1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDRoomTempCellTableViewCell.xib; sourceTree = "<group>"; };
 		32D2E9F21BE7691A00DC12C5 /* NDPersonalOrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDPersonalOrderVC.h; sourceTree = "<group>"; };
 		32D2E9F31BE7691A00DC12C5 /* NDPersonalOrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDPersonalOrderVC.m; sourceTree = "<group>"; };
 		32D2E9F41BE7691A00DC12C5 /* NDPersonalOrderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDPersonalOrderVC.xib; sourceTree = "<group>"; };
@@ -676,7 +678,6 @@
 		32D2E9FD1BE9C56100DC12C5 /* NDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDUser.m; sourceTree = "<group>"; };
 		32D2E9FF1BE9DE6C00DC12C5 /* NDCoreSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDCoreSession.h; sourceTree = "<group>"; };
 		32D2EA001BE9DE6C00DC12C5 /* NDCoreSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDCoreSession.m; sourceTree = "<group>"; };
-		32D2EA021BE9F6A800DC12C5 /* testUserIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testUserIcon.png; path = Assets.xcassets/temp/testUserIcon.imageset/testUserIcon.png; sourceTree = "<group>"; };
 		32D2EA041BE9F6CB00DC12C5 /* ic_tem_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_tem_head.png; path = Assets.xcassets/temp/icon_placeHolder.imageset/ic_tem_head.png; sourceTree = "<group>"; };
 		32D2EA061BEAEF3C00DC12C5 /* FormSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormSection.h; sourceTree = "<group>"; };
 		32D2EA071BEAEF3C00DC12C5 /* FormSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormSection.m; sourceTree = "<group>"; };
@@ -705,6 +706,9 @@
 		32D2EA2A1BEB2DBE00DC12C5 /* UUToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUToolBarView.m; sourceTree = "<group>"; };
 		32D2EA2B1BEB2DBE00DC12C5 /* UUZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUZoomingScrollView.h; sourceTree = "<group>"; };
 		32D2EA2C1BEB2DBE00DC12C5 /* UUZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUZoomingScrollView.m; sourceTree = "<group>"; };
+		32D59EB51C0C351900348018 /* NDPersonalOrderCommentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDPersonalOrderCommentVC.h; sourceTree = "<group>"; };
+		32D59EB61C0C351900348018 /* NDPersonalOrderCommentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDPersonalOrderCommentVC.m; sourceTree = "<group>"; };
+		32D59EB71C0C351900348018 /* NDPersonalOrderCommentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDPersonalOrderCommentVC.xib; sourceTree = "<group>"; };
 		32D8395F1C08644A00E8271E /* UMComFeedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMComFeedEntity.h; sourceTree = "<group>"; };
 		32D839601C08644A00E8271E /* UMCommunity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMCommunity.h; sourceTree = "<group>"; };
 		32D839611C08644A00E8271E /* UMComPullRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMComPullRequest.h; sourceTree = "<group>"; };
@@ -1023,6 +1027,8 @@
 		32D84E691C08120100FB3D54 /* NDShengmingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDShengmingVC.h; sourceTree = "<group>"; };
 		32D84E6A1C08120100FB3D54 /* NDShengmingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDShengmingVC.m; sourceTree = "<group>"; };
 		32D84E6B1C08120100FB3D54 /* NDShengmingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDShengmingVC.xib; sourceTree = "<group>"; };
+		32DF857F1C1584400087C9CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		32DF85811C1594BD0087C9CC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Assets.xcassets/Default.imageset/Default-568h@2x.png"; sourceTree = "<group>"; };
 		32E2297C1BDF3C0000AF12E7 /* NDRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDRoom.h; sourceTree = "<group>"; };
 		32E2297D1BDF3C0000AF12E7 /* NDRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDRoom.m; sourceTree = "<group>"; };
 		32E229931BDF3C7F00AF12E7 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -1254,6 +1260,12 @@
 		32FD4DBC1BC82ECE0054D2EA /* NCCommunityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCCommunityVC.h; sourceTree = "<group>"; };
 		32FD4DBD1BC82ECE0054D2EA /* NCCommunityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCCommunityVC.m; sourceTree = "<group>"; };
 		32FD4DBE1BC82ECE0054D2EA /* NCCommunityVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NCCommunityVC.xib; sourceTree = "<group>"; };
+		32FFD7501C11AD1A003403DF /* NDRoomTempDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDRoomTempDetailVC.h; sourceTree = "<group>"; };
+		32FFD7511C11AD1A003403DF /* NDRoomTempDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDRoomTempDetailVC.m; sourceTree = "<group>"; };
+		32FFD7521C11AD1A003403DF /* NDRoomTempDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDRoomTempDetailVC.xib; sourceTree = "<group>"; };
+		32FFD7571C11ADB4003403DF /* NDRoomTempCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDRoomTempCellTableViewCell.h; sourceTree = "<group>"; };
+		32FFD7581C11ADB4003403DF /* NDRoomTempCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDRoomTempCellTableViewCell.m; sourceTree = "<group>"; };
+		32FFD7591C11ADB4003403DF /* NDRoomTempCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDRoomTempCellTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1651,15 +1663,18 @@
 		32C48B081BCADAC8009CB1A3 /* Room */ = {
 			isa = PBXGroup;
 			children = (
+				32FFD7571C11ADB4003403DF /* NDRoomTempCellTableViewCell.h */,
+				32FFD7581C11ADB4003403DF /* NDRoomTempCellTableViewCell.m */,
+				32FFD7591C11ADB4003403DF /* NDRoomTempCellTableViewCell.xib */,
+				32FFD7501C11AD1A003403DF /* NDRoomTempDetailVC.h */,
+				32FFD7511C11AD1A003403DF /* NDRoomTempDetailVC.m */,
+				32FFD7521C11AD1A003403DF /* NDRoomTempDetailVC.xib */,
 				32C48B091BCADAC8009CB1A3 /* NDRoomVC.h */,
 				32C48B0A1BCADAC8009CB1A3 /* NDRoomVC.m */,
 				32C48B0B1BCADAC8009CB1A3 /* NDRoomVC.xib */,
 				32F331CA1BCF0429004D772B /* NDRoomCell.h */,
 				32F331CB1BCF0429004D772B /* NDRoomCell.m */,
 				32F331CC1BCF0429004D772B /* NDRoomCell.xib */,
-				32D2E9EB1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.h */,
-				32D2E9EC1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.m */,
-				32D2E9ED1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.xib */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -1705,6 +1720,9 @@
 				32D2E9F71BE7698D00DC12C5 /* NDPersonalOrderCell.h */,
 				32D2E9F81BE7698D00DC12C5 /* NDPersonalOrderCell.m */,
 				32D2E9F91BE7698D00DC12C5 /* NDPersonalOrderCell.xib */,
+				32D59EB51C0C351900348018 /* NDPersonalOrderCommentVC.h */,
+				32D59EB61C0C351900348018 /* NDPersonalOrderCommentVC.m */,
+				32D59EB71C0C351900348018 /* NDPersonalOrderCommentVC.xib */,
 			);
 			path = PersonalOrder;
 			sourceTree = "<group>";
@@ -2803,9 +2821,10 @@
 		32FD49531BC790660054D2EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				32DF85811C1594BD0087C9CC /* Default-568h@2x.png */,
+				32DF85801C1584400087C9CC /* LaunchScreen.storyboard */,
 				32EF755B1BF5EA6E003CBB95 /* messages.plist */,
 				32D2EA041BE9F6CB00DC12C5 /* ic_tem_head.png */,
-				32D2EA021BE9F6A800DC12C5 /* testUserIcon.png */,
 				32FD49561BC790660054D2EA /* AppDelegate.h */,
 				32FD49571BC790660054D2EA /* AppDelegate.mm */,
 				32FD495F1BC790660054D2EA /* Assets.xcassets */,
@@ -3127,6 +3146,7 @@
 				32D83B051C08644B00E8271E /* UMComCommentTableViewCell.xib in Resources */,
 				328B78B71BD0171D000F38DA /* NDRoomSelectVC.xib in Resources */,
 				32D83B351C08644B00E8271E /* UMSLoginViewController.xib in Resources */,
+				32FFD7561C11AD1A003403DF /* NDRoomTempDetailVC.xib in Resources */,
 				32C6583B1BD6EDA900490F37 /* NDPersonalEhrVC.xib in Resources */,
 				324736441BD7E4E80032C73C /* NDPersonalBindingRoomVC.xib in Resources */,
 				322DAE311BEF9714008077C1 /* read_me.txt in Resources */,
@@ -3139,8 +3159,8 @@
 				32065CBA1BFDE5990097524A /* NDQACommonCell.xib in Resources */,
 				329344CA1BD7F41D0029CF0D /* NDPersonalReferFooterCell.xib in Resources */,
 				32D83B161C08644B00E8271E /* UMComFilterTopicsViewCell.xib in Resources */,
-				32D2E9EF1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.xib in Resources */,
 				326197591BCBFB4A00351022 /* ShareSDKUI.bundle in Resources */,
+				32DF85821C1594BD0087C9CC /* Default-568h@2x.png in Resources */,
 				32F008011BF47555005700A6 /* NDPhotoGridCell.xib in Resources */,
 				32647D761BD21E830099D7A8 /* NDRoomOrderVC.xib in Resources */,
 				32D83B331C08644B00E8271E /* UMShareEditViewController.xib in Resources */,
@@ -3169,7 +3189,6 @@
 				32FD439C1BD690EC006D1CB7 /* NDPersonalChangePwd.xib in Resources */,
 				32D83AE91C08644B00E8271E /* UMComTableViewCell.xib in Resources */,
 				329345001BD9497A0029CF0D /* NDQAOnlineVC.xib in Resources */,
-				32D2EA031BE9F6A800DC12C5 /* testUserIcon.png in Resources */,
 				32D83AC21C08644B00E8271E /* UMComSDKResources.bundle in Resources */,
 				32D84E581C0736ED00FB3D54 /* NDDocSelfDetailViewController.xib in Resources */,
 				32D83B2D1C08644B00E8271E /* UMSocialLocalizable.strings in Resources */,
@@ -3200,16 +3219,19 @@
 				32D84E5E1C0808C800FB3D54 /* NDAboutVC.xib in Resources */,
 				328B78BC1BD03254000F38DA /* NDRoomSelectCell.xib in Resources */,
 				32D83B201C08644B00E8271E /* UMComProfileSettingController.xib in Resources */,
+				32D59EB91C0C351900348018 /* NDPersonalOrderCommentVC.xib in Resources */,
 				329344C51BD7F1470029CF0D /* NDPersonalReferFooter.xib in Resources */,
 				32647D811BD36E630099D7A8 /* NDRoomDocDetail.xib in Resources */,
 				32647D5F1BD152820099D7A8 /* NDRoomSelectMoreVC.xib in Resources */,
 				32FD4DC01BC82ECE0054D2EA /* NCCommunityVC.xib in Resources */,
 				32D83B301C08644B00E8271E /* UMSCommentDetailController.xib in Resources */,
+				32FFD75B1C11ADB4003403DF /* NDRoomTempCellTableViewCell.xib in Resources */,
 				3292A9061BF9E0B0003DF24E /* NDDocSelfVC.xib in Resources */,
 				32EFFB6F1BCD3A3600A80994 /* Info.plist in Resources */,
 				32C658321BD6DE5E00490F37 /* NDLoginVC.xib in Resources */,
 				32F0D44B1BD5FCBC00229828 /* NDPersonalApproveVC.xib in Resources */,
 				329344B51BD7E8630029CF0D /* NDPersonalBindingRoomCell.xib in Resources */,
+				32DF857E1C1584400087C9CC /* LaunchScreen.storyboard in Resources */,
 				32D83ABF1C08644B00E8271E /* FZLanTingHei-L-GBK-M.TTF in Resources */,
 				32D83B321C08644B00E8271E /* UMSCommentInputControlleriPad.xib in Resources */,
 				3261976E1BCC185D00351022 /* PushConfig.plist in Resources */,
@@ -3265,6 +3287,7 @@
 				32D83AED1C08644B00E8271E /* UMComActionPickerAddView.m in Sources */,
 				32D83B151C08644B00E8271E /* UMComFilterTopicsViewCell.m in Sources */,
 				325970AE1BF153EC006B1FD8 /* NDOrder.m in Sources */,
+				32D59EB81C0C351900348018 /* NDPersonalOrderCommentVC.m in Sources */,
 				32D83B0A1C08644B00E8271E /* UMComFindTableViewCell.m in Sources */,
 				32D83ACD1C08644B00E8271E /* UMComLevelImage.m in Sources */,
 				324736381BD7BE900032C73C /* NDSettingTableViewController.m in Sources */,
@@ -3375,7 +3398,6 @@
 				32D83ADD1C08644B00E8271E /* UMComiToast.m in Sources */,
 				329344DF1BD7FF200029CF0D /* NDPersonalAttentionDocCell.m in Sources */,
 				32D84E621C0811CB00FB3D54 /* NDAdvanceVC.m in Sources */,
-				32D2E9EE1BE753FA00DC12C5 /* NDRoomTempCellTableViewCell.m in Sources */,
 				32D2EA0F1BEB0AF100DC12C5 /* NDPersonalRegistBindVC.m in Sources */,
 				32D83B1F1C08644B00E8271E /* UMComProfileSettingController.m in Sources */,
 				32D83B141C08644B00E8271E /* UMComSearchViewController.m in Sources */,
@@ -3387,6 +3409,7 @@
 				32D83AD71C08644B00E8271E /* UMImagePickerController.m in Sources */,
 				32FD4D9B1BC81DF20054D2EA /* AFNetworkReachabilityManager.m in Sources */,
 				32E229EE1BDF3C7F00AF12E7 /* MJRefreshAutoNormalFooter.m in Sources */,
+				32FFD7551C11AD1A003403DF /* NDRoomTempDetailVC.m in Sources */,
 				32D83B011C08644B00E8271E /* UMComHomeFeedViewController.m in Sources */,
 				329344BF1BD7EE990029CF0D /* NDPersonalReferCell.m in Sources */,
 				32D2EA361BEB2DBE00DC12C5 /* UUToolBarView.m in Sources */,
@@ -3429,6 +3452,7 @@
 				32F0D4181BD3D93800229828 /* NDRoomSelectLocationVC.m in Sources */,
 				32D83ACB1C08644B00E8271E /* UMComLabel.m in Sources */,
 				32E229F21BDF3C7F00AF12E7 /* MJRefreshBackStateFooter.m in Sources */,
+				32FFD75A1C11ADB4003403DF /* NDRoomTempCellTableViewCell.m in Sources */,
 				32FD49AB1BC7A4300054D2EA /* UIImage+Util.m in Sources */,
 				32D83ADA1C08644B00E8271E /* UMComSearchBar.m in Sources */,
 				32D83B1C1C08644B00E8271E /* UMComMessageSettingViewController.m in Sources */,
@@ -3571,6 +3595,14 @@
 			name = UMSocialLocalizable.strings;
 			sourceTree = "<group>";
 		};
+		32DF85801C1584400087C9CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32DF857F1C1584400087C9CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -3664,8 +3696,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3705,6 +3737,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinyi.newdoc;
 				PRODUCT_NAME = newdoc;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -3712,8 +3745,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3753,6 +3786,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinyi.newdoc;
 				PRODUCT_NAME = newdoc;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

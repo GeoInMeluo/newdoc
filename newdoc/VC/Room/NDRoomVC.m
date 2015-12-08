@@ -12,6 +12,8 @@
 #import "NDQAOnlineVC.h"
 #import "NDRoomTempCellTableViewCell.h"
 #import "NDDocSelfVC.h"
+#import "NDRoomTempDetailVC.h"
+
 
 @interface NDRoomVC ()
 @property (strong, nonatomic) IBOutlet UITableViewCell *tempCell1;
@@ -32,21 +34,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 1;
 }
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//
-//    static NSString *cellId = @"NDRoomCell";
-//    
-//    NDRoomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-//
-//    if(cell == nil){
-//        cell = [[NDRoomCell alloc] init];
-//    }
-//    
-//    return cell;
-//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -57,13 +46,7 @@
     if(cell == nil){
         cell = [NDRoomTempCellTableViewCell new];
     }
-    
-    if(indexPath.row == 0){
-        cell.image.image = [UIImage imageNamed:@"temp_home_1"];
-    }else{
-         cell.image.image = [UIImage imageNamed:@"temp_home_2"];
-    }
-    
+   
     return cell;
     
 }
@@ -71,18 +54,14 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return 295;
-    
-    if(indexPath.row == 0){
-        return 200;
-    }else{
-        return 100;
-    }
+    return 94;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    todo();
-//    ShowVC(NDRoomMapVC);
+    NDRoomTempDetailVC *vc = [NDRoomTempDetailVC new];
+    vc.urlStr = @"http://www.xinyijk.com/meducation.html";
+    PushVC(vc);
 }
 
 - (IBAction)btnHeader1Click:(id)sender {
@@ -99,6 +78,10 @@
     ShowVC(NDRoomMapVC);
 }
 
-
+- (IBAction)btnBigClicked:(id)sender {
+    NDRoomTempDetailVC *vc = [NDRoomTempDetailVC new];
+    vc.urlStr = @"http://www.xinyijk.com/mpublicactivity.html";
+    PushVC(vc);
+}
 
 @end

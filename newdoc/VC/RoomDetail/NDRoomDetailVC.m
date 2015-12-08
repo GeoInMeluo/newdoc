@@ -21,6 +21,8 @@
 @property (nonatomic, copy) NSString *selectSubroom;
 @property (nonatomic, strong) NSArray *docs;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblCurrentSubroom;
+
 
 
 @end
@@ -40,8 +42,6 @@
     self.title = @"诊室详情";
     
     
-    
-    [self startGet];
 }
 
 - (void)pop{
@@ -102,10 +102,14 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    [self startGet];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+    self.tableView.height = self.view.height - self.moreView.bottom - 14;
     
     self.pickClass.left = self.moreView.left;
     self.pickClass.top = self.moreView.bottom;
@@ -188,6 +192,8 @@
     NDSubroom *subroom = self.room.catalogs[currentSelectRow];
     
     self.selectSubroom = subroom.name;
+    
+    self.lblCurrentSubroom.text = subroom.name;
     
     [self startGetDocsListWithSelectSubroom];
 }

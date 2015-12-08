@@ -24,7 +24,8 @@
 - (void)setupUI{
     self.title = @"常见问题";
     
-    _lblQuestion.text = self.commonQA.question;
+    _lblQuestion.text = self.commonQA.answer;
+    
 }
 
 @end

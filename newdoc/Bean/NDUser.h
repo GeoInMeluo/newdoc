@@ -33,13 +33,6 @@
 @property (nonatomic, copy) NSString *weixin;
 @property (nonatomic, copy) NSString *mobile;
 @property (nonatomic, copy) NSString *sex;
-//@property (nonatomic, copy) NSString *city;
-//@property (nonatomic, copy) NSString *country;
-//@property (nonatomic, copy) NSString *province;
-//@property (nonatomic, copy) NSString *citizenid;
-//@property (nonatomic, copy) NSString *insuranceid;
-//@property (nonatomic, copy) NSString *update_date;
-//@property (nonatomic, copy) NSString *reg_date;
-//@property (nonatomic, copy) NSString *commit_date;
+@property (nonatomic, assign) int user_status;
 @property (nonatomic, copy) NSString *real_name;
 @end

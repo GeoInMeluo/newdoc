@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NDRoomDocDetail">
             <connections>
+                <outlet property="btnHeader" destination="MZu-z1-4i2" id="6An-5g-cpa"/>
                 <outlet property="defaultHeader" destination="80m-qb-29r" id="zCq-l4-2rH"/>
                 <outlet property="lblDocName" destination="qhD-Y0-cAg" id="DeG-qx-FLc"/>
                 <outlet property="lblDocTitle" destination="Qlc-na-4Nb" id="Hb9-h5-Srk"/>

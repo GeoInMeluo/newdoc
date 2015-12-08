@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblDoc;
 @property (weak, nonatomic) IBOutlet UILabel *lblOrderTime;
 @property (weak, nonatomic) IBOutlet UIImageView *ivNew;
+@property (weak, nonatomic) IBOutlet Button *btnComment;
 
 @end

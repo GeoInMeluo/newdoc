@@ -124,14 +124,26 @@
         };
         PushVCWeak(vc);
     };
-
-    self.cellApprove.callback = ^(FormCell *cell, NSIndexPath *indexPath){
-        CreateVC(NDPersonalApproveVC);
-        vc.vcCallback = ^(NSString* name, NSString *idCardNumber){
-
+    
+    
+    if([NDCoreSession coreSession].user.user_status == 0){
+        self.cellApprove.callback = ^(FormCell *cell, NSIndexPath *indexPath){
+            CreateVC(NDPersonalApproveVC);
+            vc.vcCallback = ^(NSString* name, NSString *idCardNumber){
+                
+            };
+            PushVCWeak(vc);
         };
-        PushVCWeak(vc);
-    };
+    }else if([NDCoreSession coreSession].user.user_status == 1){
+        self.cellApprove.callback = ^(FormCell *cell, NSIndexPath *indexPath){
+            [MBProgressHUD showError:@"认证中"];
+        };
+    }else if([NDCoreSession coreSession].user.user_status == 2){
+        self.cellApprove.callback = ^(FormCell *cell, NSIndexPath *indexPath){
+            [MBProgressHUD showError:@"已认证"];
+        };
+    }
+    
     
     self.cellChangePwd.callback = ^(FormCell *cell, NSIndexPath *indexPath){
         CreateVC(NDPersonalChangePwd);

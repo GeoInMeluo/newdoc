@@ -98,11 +98,11 @@
     self.title = @"预约挂号";
     
     
-    self.lblDocName.text = self.docMorePreserveWindow.name;
-    self.lblDocTitle.text = self.docMorePreserveWindow.title;
-    self.lblGoodat.text = [NSString stringWithFormat:@"擅长：%@", self.docMorePreserveWindow.goodat];
+    self.lblDocName.text = SafeString (self.docMorePreserveWindow.name);
+    self.lblDocTitle.text = SafeString (self.docMorePreserveWindow.title);
+    self.lblGoodat.text = SafeString ([NSString stringWithFormat:@"擅长：%@", self.docMorePreserveWindow.goodat]);
     NDSubroom *subroom = self.docMorePreserveWindow.catalog[0];
-    self.lblSubroom.text = [NSString stringWithFormat:@"科室：%@",subroom.name];
+    self.lblSubroom.text = SafeString ([NSString stringWithFormat:@"科室：%@",subroom.name]);
     [self.btnDocHeadImg sd_setImageWithURL:[NSURL URLWithString:self.docMorePreserveWindow.picture_url] forState:UIControlStateNormal placeholderImage:[UIImage imageWithName:@"icon_placeHolder"]];
     
 //    self.lblCountMoment.text = [NSString stringWithFormat:@"%@",self.doc];
@@ -111,7 +111,7 @@
     
     self.roomCollectionView.pagingEnabled = YES;
     
-
+   
 }
 
 - (void)back{
@@ -160,12 +160,24 @@
             temp = 0;
         }
         
-        [weakself.roomCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:temp inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionRight];
+        if(temp != 0){
+            [weakself.roomCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:temp inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionRight];
+        }
+     
+        
         
         weakself.currentPreserveWindow = doctorMorePreserveWindow.preserve_window[temp];
         weakself.currentWindowIndex = temp;
         
         [weakself initWithDatePicker];
+        
+        self.doc.isFocus = doctorMorePreserveWindow.isFocus;
+        
+        if(doctorMorePreserveWindow.isFocus){
+            weakself.btnAttention.selected = YES;
+        }else{
+            weakself.btnAttention.selected = NO;
+        }
     } failure:^(NSString *error_message) {
         
     }];
@@ -176,15 +188,23 @@
 - (void)initWithDatePicker{
     [self.dateView clearSubviews];
     
+    NSDate *currentDate = [NSDate date];
+    
     //得到今天是周几
-    NSUInteger weekNumber = [[NSDate date] weeklyOrdinality];
+    NSUInteger weekNumber = [currentDate weeklyOrdinality];
 //    NSUInteger weekNumber = 3;
     //得到今天是几号
-    NSUInteger dateNumber = [[NSDate date] day];
+    NSUInteger dateNumber = [currentDate day];
+    
+    //得到当前月份
+    NSUInteger monthNumber = [currentDate month];
+    
+    int preMonthCountDay = [self howManyDaysInThisMonth:[currentDate year] month: monthNumber - 1];
+    
     self.currentDate = dateNumber;
 //    NSUInteger dateNumber = 21;
     //当前月份的总天数
-    NSUInteger countMonthDay = [[NSDate date] numberOfDaysInCurrentMonth];
+    NSUInteger countMonthDay = [currentDate numberOfDaysInCurrentMonth];
     
     NSUInteger temp = 6 + weekNumber;
     
@@ -224,6 +244,14 @@
             btn.layer.borderWidth = 1;
             
             NSInteger btnTitleNumber = dateNumber - temp + i;
+            
+            if(btnTitleNumber <= 0){
+                btnTitleNumber = preMonthCountDay - abs(btnTitleNumber);
+            }
+            
+            if(btnTitleNumber > countMonthDay){
+                btnTitleNumber = btnTitleNumber - countMonthDay;
+            }
                 
             //今天以后的有效日期
             if(i >= temp && btnTitleNumber <= dateNumber + 13){
@@ -427,6 +455,12 @@
         return;
     }
     
+    if(self.docMorePreserveWindow.preserve_window.count == 0){
+        self.currentWindowIndex = 0;
+        return;
+    }
+    
+    
     [self.roomCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentWindowIndex inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
 
     self.currentPreserveWindow = self.docMorePreserveWindow.preserve_window[self.currentWindowIndex];
@@ -452,6 +486,7 @@
         [self startCancelAttentionDoctorWithDocId:self.docMorePreserveWindow.ID success:^{
             weakself.docMorePreserveWindow.isFocus = NO;
             weakself.btnAttention.selected = NO;
+            weakself.doc.isFocus = NO;
         } failure:^(NSString *error_message) {
             
         }];
@@ -459,6 +494,7 @@
         [self startAttentionDoctorWithDocId:self.docMorePreserveWindow.ID success:^{
             weakself.docMorePreserveWindow.isFocus = YES;
             weakself.btnAttention.selected = YES;
+            weakself.doc.isFocus = YES;
         } failure:^(NSString *error_message) {
             
         }];
@@ -482,19 +518,19 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (int)howManyDaysInThisMonth:(NSUInteger)year month:(NSUInteger)imonth {
+    if((imonth == 1)||(imonth == 3)||(imonth == 5)||(imonth == 7)||(imonth == 8)||(imonth == 10)||(imonth == 12))
+        return 31;
+    if((imonth == 4)||(imonth == 6)||(imonth == 9)||(imonth == 11))
+        return 30;
+    if((year%4 == 1)||(year%4 == 2)||(year%4 == 3))
+    {
+        return 28;
+    }
+    if(year%400 == 0)
+        return 29;
+    if(year%100 == 0)
+        return 28;
+    return 29;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

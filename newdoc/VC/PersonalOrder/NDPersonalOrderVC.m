@@ -9,9 +9,11 @@
 #import "NDPersonalOrderVC.h"
 #import "NDPersonalOrderCell.h"
 #import "NDRoomOrderVC.h"
+#import "NDPersonalOrderCommentVC.h"
 
 @interface NDPersonalOrderVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *orders;
+@property (nonatomic, assign) int tempNumber;
 @end
 
 @implementation NDPersonalOrderVC
@@ -33,17 +35,27 @@
     [self startGetOrdersWithAndSuccess:^(NSArray *orders) {
         weakself.orders = orders;
         
+        weakself.orders = [weakself.orders sortedArrayUsingComparator:^NSComparisonResult(NDOrder *obj1, NDOrder *obj2) {
+            if([obj1.ID intValue] < [obj2.ID intValue]){
+                return NSOrderedDescending;
+            }
+            return NSOrderedAscending;
+        }];
+        
         [weakself.tableView reloadData];
     } failure:^(NSString *error_message) {
         
     }];
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.orders.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    WEAK_SELF;
     
     static NSString *cellId = @"NDPersonalOrderCell";
     
@@ -60,6 +72,14 @@
     }
     
     cell.order = order;
+    cell.btnComment.callback = ^(Button *btn){
+        
+        
+        CreateVC(NDPersonalOrderCommentVC);
+        vc.orderId = order.ID;
+        PushVCWeak(vc);
+        
+    };
     
     return cell;
     

@@ -37,8 +37,8 @@ VcClassName * vc = [[VcClassName alloc] init]; \
 #define Blue [UIColor colorWithHex:@"#00AAFF"]
 #define kScreenSize [UIScreen mainScreen].bounds.size
 
-#define kHostStr @"http://api.xinyijk.com"
-//#define kHostStr @"http://newdoc.meluo.net"
+//#define kHostStr @"http://api.xinyijk.com"
+#define kHostStr @"http://newdoc.meluo.net"
 
 
 void ShowAlert(NSString * text);

@@ -23,9 +23,15 @@
     _lblIndex.text = order.ID;
     _lblLocation.text = order.room_address;
     _lblDoc.text = [NSString stringWithFormat:@"医生：%@",order.doctor_name];
-    _lblOrderTime.text = [NSString stringWithFormat:@"预约时间：%@ %@",order.actual_date, order.timeslotid];
+    _lblOrderTime.text = [NSString stringWithFormat:@"预约时间：%@ %@-%@",order.actual_date, order.start_time, order.end_time];
     _lblSubRoom.text = [NSString stringWithFormat:@"科室：%@",order.catalog_name];
     _lblRoomName.text = [NSString stringWithFormat:@"医院：%@",order.room_name];
+    
+    if([order.status isEqualToString:@"1"]){
+        self.btnComment.hidden = NO;
+    }else{
+        self.btnComment.hidden = YES;
+    }
 }
 
 - (void)awakeFromNib {

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NDPersonalOrderCommentVC">
+            <connections>
+                <outlet property="tfContent" destination="bVp-dG-hQS" id="a4k-6q-Ieo"/>
+                <outlet property="vStar" destination="atd-YD-0kJ" id="IuK-Vi-oSY"/>
+                <outlet property="view" destination="yNK-oV-sKW" id="Ehs-PE-Zmz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="yNK-oV-sKW">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQK-YP-ruD">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您对医生的评价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHX-FS-V9v">
+                            <rect key="frame" x="32" y="13" width="84" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="84w-Vs-SNb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atd-YD-0kJ">
+                            <rect key="frame" x="124" y="8" width="243" height="24"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="atd-YD-0kJ" firstAttribute="top" secondItem="yQK-YP-ruD" secondAttribute="top" constant="8" id="5wN-iO-HH3"/>
+                        <constraint firstAttribute="bottom" secondItem="atd-YD-0kJ" secondAttribute="bottom" constant="8" id="6Em-QY-YJL"/>
+                        <constraint firstItem="atd-YD-0kJ" firstAttribute="leading" secondItem="iHX-FS-V9v" secondAttribute="trailing" constant="8" id="Aty-YR-aoT"/>
+                        <constraint firstAttribute="trailing" secondItem="atd-YD-0kJ" secondAttribute="trailing" constant="8" id="N2a-cg-sgQ"/>
+                        <constraint firstAttribute="height" constant="40" id="OWx-FH-goW"/>
+                        <constraint firstItem="iHX-FS-V9v" firstAttribute="leading" secondItem="yQK-YP-ruD" secondAttribute="leading" constant="32" id="T8c-rI-2co"/>
+                        <constraint firstItem="iHX-FS-V9v" firstAttribute="centerY" secondItem="yQK-YP-ruD" secondAttribute="centerY" id="lOC-oW-GLL"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bVp-dG-hQS">
+                    <rect key="frame" x="13" y="48" width="354" height="137"/>
+                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="137" id="m4O-up-Nej"/>
+                    </constraints>
+                    <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtA-m4-v2c">
+                    <rect key="frame" x="138" y="207" width="100" height="33"/>
+                    <color key="backgroundColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="mac-yA-LUA"/>
+                        <constraint firstAttribute="width" constant="100" id="zvx-ti-yta"/>
+                    </constraints>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnCommentClicked:" destination="-1" eventType="touchUpInside" id="Wpj-KV-gd0"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bVp-dG-hQS" firstAttribute="top" secondItem="yQK-YP-ruD" secondAttribute="bottom" constant="8" id="Mc9-3S-DOx"/>
+                <constraint firstItem="yQK-YP-ruD" firstAttribute="leading" secondItem="yNK-oV-sKW" secondAttribute="leading" id="Q9B-2A-kar"/>
+                <constraint firstItem="KtA-m4-v2c" firstAttribute="top" secondItem="bVp-dG-hQS" secondAttribute="bottom" constant="22" id="UzL-7B-IKl"/>
+                <constraint firstAttribute="trailing" secondItem="yQK-YP-ruD" secondAttribute="trailing" id="eUQ-kK-b3D"/>
+                <constraint firstItem="bVp-dG-hQS" firstAttribute="leading" secondItem="yNK-oV-sKW" secondAttribute="leading" constant="13" id="gcf-Ad-XNT"/>
+                <constraint firstAttribute="trailing" secondItem="bVp-dG-hQS" secondAttribute="trailing" constant="8" id="gxf-3g-spP"/>
+                <constraint firstItem="KtA-m4-v2c" firstAttribute="centerX" secondItem="yNK-oV-sKW" secondAttribute="centerX" id="psx-SU-1SC"/>
+                <constraint firstItem="yQK-YP-ruD" firstAttribute="top" secondItem="yNK-oV-sKW" secondAttribute="top" id="uvo-og-IXg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="787.5" y="-507.5"/>
+        </view>
+    </objects>
+</document>
