@@ -14,6 +14,8 @@
 @interface NDPersonalOrderVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *orders;
 @property (nonatomic, assign) int tempNumber;
+
+@property (nonatomic, assign) int page;
 @end
 
 @implementation NDPersonalOrderVC
@@ -30,10 +32,37 @@
     
     self.title = @"我的预约";
     
+    [self addHeader];
+    [self addFooter];
+    
+    [self startGet];
+}
+
+- (void)onRefreshHeader{
+    self.page = 0;
+    
+    [self startGet];
+}
+
+- (void)onRefreshFooter{
+    self.page++;
+    
+    [self startGet];
+}
+
+- (void)startGet{
     WEAK_SELF;
     
-    [self startGetOrdersWithAndSuccess:^(NSArray *orders) {
-        weakself.orders = orders;
+    [self startGetOrdersWithAndPage:self.page success:^(NSArray *orders) {
+//        weakself.orders = orders;
+        
+        if(self.page){
+            NSMutableArray *tempArr = [NSMutableArray arrayWithArray:weakself.orders];
+            [tempArr addObjectsFromArray:orders];
+            weakself.orders = tempArr;
+        }else{
+            weakself.orders = orders;
+        }
         
         weakself.orders = [weakself.orders sortedArrayUsingComparator:^NSComparisonResult(NDOrder *obj1, NDOrder *obj2) {
             if([obj1.ID intValue] < [obj2.ID intValue]){
@@ -47,7 +76,6 @@
         
     }];
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.orders.count;

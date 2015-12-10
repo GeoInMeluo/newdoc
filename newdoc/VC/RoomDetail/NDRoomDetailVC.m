@@ -23,8 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblCurrentSubroom;
 
-
-
+@property (nonatomic, assign) int page;
 @end
 
 @implementation NDRoomDetailVC
@@ -40,7 +39,6 @@
     [super viewDidLoad];
 
     self.title = @"诊室详情";
-    
     
 }
 
@@ -91,6 +89,20 @@
 }
 
 - (void)setupUI{
+    WEAK_SELF;
+    
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakself onRefreshHeader];
+        [weakself.tableView.header endRefreshing];
+    }];
+    
+    // 添加上拉刷新尾部控件
+    self.tableView.footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        [weakself onRefreshFooter];
+        [weakself.tableView.footer endRefreshing];
+    }];
+
+    
     self.lblRoomName.text = self.room.name;
     self.lblRoomAddress.text = self.room.address;
     self.lblRoomGoodat.text = self.room.detail;
@@ -98,6 +110,18 @@
     self.docs = self.room.doctors;
     [self.tableView reloadData];
     
+}
+
+- (void)onRefreshHeader{
+    self.page = 0;
+    
+    [self startGet];
+}
+
+- (void)onRefreshFooter{
+    self.page ++;
+    
+    [self startGet];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

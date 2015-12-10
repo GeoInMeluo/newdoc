@@ -25,22 +25,29 @@
 }
 
 //得到附近的诊室
-- (void)startGetRoomListWithLocation:(CLLocationCoordinate2D)coordinate andCityName:(NSString *)city andAreaName:(NSString *)area success:(void(^)(NSArray *rooms))success failure:(void(^)(NSString *error_message))failure{
+- (void)startGetRoomListWithLocation:(CLLocationCoordinate2D)coordinate andCityName:(NSString *)city andAreaName:(NSString *)area andPage:(int)page success:(void(^)(NSArray *rooms))success failure:(void(^)(NSString *error_message))failure{
+    FLog(@"%@",city);
+    
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     
     if(coordinate.longitude && coordinate.latitude){
         [param setObject:SafeNumber([NSNumber numberWithDouble:coordinate.longitude]) forKey:@"longitude"];
         [param setObject:SafeNumber([NSNumber numberWithDouble:coordinate.latitude]) forKey:@"latitude"];
     }
-    else if(area){
-        [param setObject:SafeString(city) forKey:@"area"];
+    if(area){
+        [param setObject:SafeString(area) forKey:@"area"];
     }
-    else if (city){
-        [param setObject:SafeString(city) forKey:@"city"];
+    if (city){
+//        [param setObject:SafeString(city) forKey:@"city"];
     }
     
     [param setObject:SafeString(@"5000") forKey:@"scope"];
     
+    [param setObject:[NSString stringWithFormat:@"%d", page] forKey:@"pageNum"];
+    
+    [param setObject:@"10" forKey:@"pageCnt"];
+    
+    FLog(@"%@",param);
     
     
     [[NDNetManager sharedNetManager] get:@"/app/1/Rooms?action=near" parameters:param success:^(NSDictionary *result) {
@@ -227,8 +234,13 @@
 
 
 //得到医生的所有评论
-- (void)startGetDoctorCommentsWithDocId:(NSString *)docId success:(void(^)( NSArray *docComments))success failure:(void(^)(NSString *error_message))failure{
+- (void)startGetDoctorCommentsWithDocId:(NSString *)docId andPage:(int)page success:(void(^)( NSArray *docComments))success  failure:(void(^)(NSString *error_message))failure{
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    
+    [param setObject:[NSString stringWithFormat:@"%d", page] forKey:@"pageNum"];
+    
+    [param setObject:@"10" forKey:@"pageCnt"];
+
     
     [[NDNetManager sharedNetManager] get:[NSString stringWithFormat:@"/app/1/Doctors/%@?action=comments",SafeString(docId)] parameters:param success:^(NSDictionary *result) {
         NSMutableArray *comments = [NSMutableArray array];
@@ -663,9 +675,12 @@
 //}
 
 //得到用户关注的医生
-- (void)startGetAttetionDocsWithAndSuccess:(void(^)(NSArray *doc))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = @{ @"pageNum":@"0"};
+- (void)startGetAttetionDocsWithAndPage:(int)page success:(void(^)(NSArray *doc))success failure:(void(^)(NSString *error_message))failure{
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
     
+    [param setObject:[NSString stringWithFormat:@"%d", page] forKey:@"pageNum"];
+    
+    [param setObject:@"10" forKey:@"pageCnt"];
     
     [[NDNetManager sharedNetManager] get:@"/app/1/Focus?action=index" parameters:param success:^(NSDictionary *result) {
         FLog(@"%@",result);
@@ -719,9 +734,12 @@
 }
 
 // 得到用户的预约
-- (void)startGetOrdersWithAndSuccess:(void(^)(NSArray *orders))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = @{ @"pageNum":@"0"};
+- (void)startGetOrdersWithAndPage:(int)page success:(void(^)(NSArray *orders))success failure:(void(^)(NSString *error_message))failure{
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
     
+    [param setObject:[NSString stringWithFormat:@"%d", page] forKey:@"pageNum"];
+    
+    [param setObject:@"10" forKey:@"pageCnt"];
     
     [[NDNetManager sharedNetManager] get:@"/app/1/Appointments" parameters:param success:^(NSDictionary *result) {
         FLog(@"%@",result);
@@ -745,9 +763,11 @@
 };
 
 //得到用户的病历列表
-- (void)startGetEhrsWithAndSuccess:(void(^)(NSArray *ehrs))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = @{ @"pageNum":@"0"};
+- (void)startGetEhrsWithAndPage:(int)page success:(void(^)(NSArray *ehrs))success failure:(void(^)(NSString *error_message))failure{
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:[NSString stringWithFormat:@"%d", page] forKey:@"pageNum"];
     
+    [param setObject:@"10" forKey:@"pageCnt"];
     
     [[NDNetManager sharedNetManager] get:@"/app/1/Medhistorys?action=index" parameters:param success:^(NSDictionary *result) {
         FLog(@"%@",result);
@@ -773,8 +793,14 @@
 
 
 //得到用户的绑定的诊室
-- (void)startGetBindRoomsWithAndSuccess:(void(^)(NSArray *roomNames))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = @{ @"pageNum":@"0"};
+- (void)startGetBindRoomsWithPage:(int)page andSuccess:(void(^)(NSArray *roomNames))success failure:(void(^)(NSString *error_message))failure{
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    
+    [param setObject:[NSString stringWithFormat:@"%d", page] forKey:@"pageNum"];
+    
+    [param setObject:@"10" forKey:@"pageCnt"];
+     
+
     
     NSMutableArray *roomNames = [NSMutableArray array];
     
@@ -931,9 +957,14 @@
 }
 
 //浏览咨询列表
-- (void)startGetQAListAndSuccess:(void(^)(NSArray *qaMessages))success failure:(void(^)(NSString *error_message))failure{
+- (void)startGetQAListAndPage:(int)page success:(void(^)(NSArray *qaMessages))success failure:(void(^)(NSString *error_message))failure{
     
-    NSDictionary *param = [NSDictionary dictionary];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    
+    [param setObject:[NSString stringWithFormat:@"%d", page] forKey:@"pageNum"];
+    
+    [param setObject:@"10" forKey:@"pageCnt"];
+    
     
     [[NDNetManager sharedNetManager] get:@"/app/1/Consults?action=index" parameters:param success:^(NSDictionary *result) {
         FLog(@"%@",result);
@@ -962,8 +993,11 @@
 }
 
 //浏览咨询
-- (void)startGetQAWithQAId:(NSString *)qAId success:(void(^)(NSArray *talkMessages))success failure:(void(^)(NSString *error_message))failure{
-    NSDictionary *param = [NSDictionary dictionary];
+- (void)startGetQAWithQAId:(NSString *)qAId andPage:(int)page success:(void(^)(NSArray *talkMessages))success failure:(void(^)(NSString *error_message))failure{
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:[NSString stringWithFormat:@"%d", page] forKey:@"pageNum"];
+    
+    [param setObject:@"10" forKey:@"pageCnt"];
     
     [[NDNetManager sharedNetManager] get:[NSString stringWithFormat:@"/app/1/Consults/%@",qAId] parameters:param success:^(NSDictionary *result) {
         FLog(@"%@",result);

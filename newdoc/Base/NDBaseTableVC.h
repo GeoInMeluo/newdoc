@@ -10,7 +10,7 @@
 #import "FormCell.h"
 #import "FormSection.h"
 
-@interface NDBaseTableVC : UITableViewController
+@interface NDBaseTableVC : UITableViewController<UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign) BOOL isPresent;
 
@@ -30,4 +30,11 @@
 -(FormSection*)appendSection:(NSArray*)cells withHeader:(UIView*)headerView andFooter:(UIView*)footerView;
 
 - (void)pop;
+
+- (void)onRefreshHeader;
+
+- (void)onRefreshFooter;
+
+- (void)addHeader;
+- (void)addFooter;
 @end

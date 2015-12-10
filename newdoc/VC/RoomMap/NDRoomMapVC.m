@@ -41,7 +41,10 @@
 
 @property (nonatomic, weak) UIButton *btnNavRight;
 
+@property (nonatomic, copy) NSString *lastCityName;
+@property (nonatomic, copy) NSString *lastCountyName;
 
+@property (nonatomic, assign) int pageNumber;
 @end
 
 @implementation NDRoomMapVC
@@ -70,6 +73,7 @@
 }
 
 - (void)setupUI{
+    WEAK_SELF;
     
     self.currentMap = YES;
     
@@ -112,6 +116,14 @@
     
     NDRoomSelectVC *selectVC = [NDRoomSelectVC new];
     _selectVC = selectVC;
+    [_selectVC addHeader];
+    [_selectVC addFooter];
+    _selectVC.headerCallBack = ^(){
+        [weakself refreshHeader];
+    };
+    _selectVC.footerCallBack = ^(){
+        [weakself refreshFooter];
+    };
     _selectVC.tableView.hidden = YES;
     [self.view addSubview:selectVC.tableView];
     
@@ -122,28 +134,39 @@
     [self.btnSearch setTitle:self.selectLocationVC.area forState:UIControlStateNormal] ;
 }
 
-- (void)startGetRoomsWithLocation:(CLLocationCoordinate2D)coordinate andCityName:(NSString *)cityName andCountyName:(NSString *)countyName {
-    [self startGetRoomListWithLocation:coordinate andCityName:cityName andAreaName:countyName success:^(NSArray *rooms) {
+- (void)refreshHeader{
+    self.pageNumber = 0;
+    
+    [self startGetRoomsWithLocation:self.lastLocation andCityName:self.lastCityName andCountyName:self.lastCountyName andPage:self.pageNumber];
+}
+
+- (void)refreshFooter{
+    self.pageNumber++;
+    
+    [self startGetRoomsWithLocation:self.lastLocation andCityName:self.lastCityName andCountyName:self.lastCountyName andPage:self.pageNumber];
+}
+
+- (void)startGetRoomsWithLocation:(CLLocationCoordinate2D)coordinate andCityName:(NSString *)cityName andCountyName:(NSString *)countyName andPage:(int)page{
+    
+    FLog(@"%d", page);
+    
+    self.lastCityName = cityName;
+    self.lastCountyName = countyName;
+    
+    [self startGetRoomListWithLocation:coordinate andCityName:cityName andAreaName:countyName andPage:page success:^(NSArray *rooms) {
         WEAK_SELF;
         
+        weakself.btnNavRight.enabled = YES;
+        
         if(rooms.count != 0){
-//            NDRoom *room1 = [NDRoom new];
-//            room1.latitude = @"39.92";
-//            room1.longitude = @"116.42";
-//            room1.name = @"test1";
-//            
-//            NDRoom *room2 = [NDRoom new];
-//            room2.latitude = @"39.81";
-//            room2.longitude = @"116.41";
-//            room2.name = @"test2";
-//            
-//            NDRoom *room3 = [NDRoom new];
-//            room3.latitude = @"39.73";
-//            room3.longitude = @"116.43";
-//            room3.name = @"test3";
-//            
-//            self.rooms = @[room1,room2,room3];
-            weakself.rooms = rooms;
+
+            if(self.pageNumber){
+                NSMutableArray *tempArr = [NSMutableArray arrayWithArray:weakself.rooms];
+                [tempArr addObjectsFromArray:rooms];
+                weakself.rooms = tempArr;
+            }else{
+                weakself.rooms = rooms;
+            }
         
             [weakself addRoomAnnotations];
         
@@ -155,7 +178,7 @@
                 [weakself.selectVC.tableView reloadData];
             });
             
-            weakself.btnNavRight.enabled = YES;
+            
         }
     } failure:^(NSString *error_message) {
         
@@ -229,7 +252,17 @@
         weakself.segmentView.hidden = YES;
         BMKGeoCodeSearchOption *geocodeSearchOption = [[BMKGeoCodeSearchOption alloc]init];
         geocodeSearchOption.city = weakSelectionVC.cityName;
-        geocodeSearchOption.address = weakSelectionVC.countyName;
+        
+        FLog(@"%@", geocodeSearchOption.city);
+        FLog(@"%@", geocodeSearchOption.address);
+        
+        geocodeSearchOption.address = [NSString stringWithFormat:@"%@政府",geocodeSearchOption.city];
+        
+        if(![weakSelectionVC.countyName isEqualToString:@"市辖区"]){
+            geocodeSearchOption.address = weakSelectionVC.countyName;
+            
+        }
+        
         BOOL flag = [weakself.geoSearch geoCode:geocodeSearchOption];
         if(flag)
         {
@@ -333,11 +366,15 @@
 - (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error{
     self.lastLocation = result.location;
     
-    [self startGetRoomsWithLocation:self.lastLocation andCityName:result.addressDetail.city andCountyName:result.addressDetail.district];
+    FLog(@"%@", result.addressDetail.city);
+    
+    [self startGetRoomsWithLocation:self.lastLocation andCityName:result.addressDetail.city andCountyName:result.addressDetail.district andPage:0];
 }
 
 //正向地理编码(选择完位置后，根据选择的地点名称得到位置，查询诊室列表)
 - (void)onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error{
+    
+    FLog(@"(%lf,%lf)", result.location.latitude, result.location.longitude);
     
     self.lastLocation = result.location;
     
@@ -347,7 +384,7 @@
     
     [self.mapView setZoomLevel:14];
     
-    [self startGetRoomsWithLocation:self.lastLocation andCityName:self.selectLocationVC.cityName andCountyName:self.selectLocationVC.countyName];
+    [self startGetRoomsWithLocation:self.lastLocation andCityName:self.selectLocationVC.cityName andCountyName:self.selectLocationVC.countyName andPage:0];
 }
 
 // Override
@@ -532,8 +569,4 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 @end

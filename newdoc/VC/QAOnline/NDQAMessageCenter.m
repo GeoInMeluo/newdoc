@@ -34,7 +34,7 @@
 - (void)setupUI{
     WEAK_SELF;
     
-    [self startGetQAListAndSuccess:^(NSArray *qaMessages) {
+    [self startGetQAListAndPage:0 success:^(NSArray *qaMessages) {
         weakself.qaMessages = qaMessages;
         
         [weakself.tableView reloadData];

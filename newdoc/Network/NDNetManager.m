@@ -108,7 +108,8 @@
                 failure(@"授权问题");
             }else if([result[@"retcode"] isEqualToString:@"7"]){
 //                [MBProgressHUD showError:@"列表为空"];
-                failure(@"列表为空");
+//                failure(@"列表为空");
+                success(result);
             }else if([result[@"retcode"] isEqualToString:@"8"]){
                 
                 NDLoginVC *loginVC = [NDLoginVC new];
@@ -244,7 +245,8 @@
                     failure(@"授权问题");
                 }else if([result[@"retcode"] isEqualToString:@"7"]){
 //                    [MBProgressHUD showError:@"列表为空"];
-                    failure(@"列表为空");
+//                    failure(@"列表为空");
+                    success(result);
                 }else if([result[@"retcode"] isEqualToString:@"8"]){
                     
                     NDLoginVC *loginVC = [NDLoginVC new];

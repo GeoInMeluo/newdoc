@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NDBaseNavVC : UINavigationController
+@interface NDBaseNavVC : UINavigationController<UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIButton *leftBtn;
 

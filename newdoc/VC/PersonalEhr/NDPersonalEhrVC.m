@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSMutableArray *sectionIds;
 @property (nonatomic, assign) NSInteger lastSelectedIndex;
 @property (nonatomic, strong) NSArray *ehrs;
+
+@property (nonatomic, assign) int page;
 @end
 
 @implementation NDPersonalEhrVC
@@ -23,16 +25,35 @@
     
     self.title = @"我的病历";
     
+    [self addHeader];
+    [self addFooter];
+    
     [self startGet];
-    
-    
+}
+
+- (void)onRefreshHeader{
+    self.page = 0;
+    [self startGet];
+}
+
+- (void)onRefreshFooter{
+    self.page ++;
+    [self startGet];
 }
 
 - (void)startGet{
     WEAK_SELF;
     
-    [self startGetEhrsWithAndSuccess:^(NSArray *ehrs) {
-        weakself.ehrs = ehrs;
+    [self startGetEhrsWithAndPage:self.page success:^(NSArray *ehrs) {
+//        weakself.ehrs = ehrs;
+        
+        if(self.page){
+            NSMutableArray *tempArr = [NSMutableArray arrayWithArray:weakself.ehrs];
+            [tempArr addObjectsFromArray:ehrs];
+            weakself.ehrs = tempArr;
+        }else{
+            weakself.ehrs = ehrs;
+        }
         
 //        self.sectionIds = [NSMutableArray arrayWithArray:@[@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0"]];
         

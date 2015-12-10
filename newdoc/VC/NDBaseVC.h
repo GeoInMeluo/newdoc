@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NDBaseVC : UIViewController
+@interface NDBaseVC : UIViewController<UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSMutableArray *showKeyboardViews;
 
 @property (nonatomic, assign) BOOL isPresent;

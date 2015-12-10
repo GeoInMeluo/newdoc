@@ -28,7 +28,7 @@
 - (void)startSendVerifyCodeWithPhoneNumber:(NSString *)phoneNumber success:(void(^)(NSObject *resultDic))success failure:(void(^)(NSString *error_message))failure;
 
 //得到附近的诊室
-- (void)startGetRoomListWithLocation:(CLLocationCoordinate2D)coordinate andCityName:(NSString *)city andAreaName:(NSString *)area success:(void(^)(NSArray *rooms))success failure:(void(^)(NSString *error_message))failure;
+- (void)startGetRoomListWithLocation:(CLLocationCoordinate2D)coordinate andCityName:(NSString *)city andAreaName:(NSString *)area andPage:(int)page success:(void(^)(NSArray *rooms))success failure:(void(^)(NSString *error_message))failure ;
 
 //得到省份列表
 - (void)startGetProvinceListAndSuccess:(void(^)(NSArray *provinces))success failure:(void(^)(NSString *error_message))failure;
@@ -52,7 +52,7 @@
 - (void)startGetDoctorIntroWithDocId:(NSString *)docId success:(void(^)( NDDoctorIntro *intro))success failure:(void(^)(NSString *error_message))failure;
 
 //得到医生的所有评论
-- (void)startGetDoctorCommentsWithDocId:(NSString *)docId success:(void(^)( NSArray *docComments))success failure:(void(^)(NSString *error_message))failure;
+- (void)startGetDoctorCommentsWithDocId:(NSString *)docId andPage:(int)page success:(void(^)( NSArray *docComments))success  failure:(void(^)(NSString *error_message))failure;
 
 //回复用户评论
 - (void)startReplyUserCommentWithComment:(NSString *)commentId andContent:(NSString *)content success:(void(^)())success failure:(void(^)(NSString *error_message))failure;
@@ -103,19 +103,19 @@
 //- (void)startGetRealNameAuthenticationWithNameAndSuccess:(void(^)(NDRealNameAuth *realNameAuth))success failure:(void(^)(NSString *error_message))failure;
 
 //得到用户关注的医生
-- (void)startGetAttetionDocsWithAndSuccess:(void(^)(NSArray *doc))success failure:(void(^)(NSString *error_message))failure;
+- (void)startGetAttetionDocsWithAndPage:(int)page success:(void(^)(NSArray *doc))success failure:(void(^)(NSString *error_message))failure;
 
 //得到咨询列表
 - (void)startGetRefersWithAndSuccess:(void(^)(NSArray *refers))success failure:(void(^)(NSString *error_message))failure;
 
 // 得到用户的预约
-- (void)startGetOrdersWithAndSuccess:(void(^)(NSArray *orders))success failure:(void(^)(NSString *error_message))failure;
+- (void)startGetOrdersWithAndPage:(int)page success:(void(^)(NSArray *orders))success failure:(void(^)(NSString *error_message))failure;
 
 //得到用户的病历列表
-- (void)startGetEhrsWithAndSuccess:(void(^)(NSArray *ehrs))success failure:(void(^)(NSString *error_message))failure;
+- (void)startGetEhrsWithAndPage:(int)page success:(void(^)(NSArray *ehrs))success failure:(void(^)(NSString *error_message))failure;
 
 //得到用户的绑定的诊室
-- (void)startGetBindRoomsWithAndSuccess:(void(^)(NSArray *roomNames))success failure:(void(^)(NSString *error_message))failure;
+- (void)startGetBindRoomsWithPage:(int)page andSuccess:(void(^)(NSArray *roomNames))success failure:(void(^)(NSString *error_message))failure;
 
 //绑定手机
 - (void)startBindPhoneNumber:(NSString *)phoneNumber andVerifyCode:(NSString *)verifyCode  success:(void(^)())success failure:(void(^)(NSString *error_message))failure;
@@ -130,10 +130,10 @@
 - (void)startSubmitQAWithContent:(NSString *)content andSubroomId:(NSString *)subroomId andSex:(NSString *)sex andAge:(NSString *)age andImgs:(NSArray *)imgs success:(void(^)())success failure:(void(^)(NSString *error_message))failure;
 
 //浏览咨询列表
-- (void)startGetQAListAndSuccess:(void(^)(NSArray *qaMessages))success failure:(void(^)(NSString *error_message))failure;
+- (void)startGetQAListAndPage:(int)page success:(void(^)(NSArray *qaMessages))success failure:(void(^)(NSString *error_message))failure;
 
 //浏览咨询
-- (void)startGetQAWithQAId:(NSString *)qAId success:(void(^)(NSArray *talkMessages))success failure:(void(^)(NSString *error_message))failure;
+- (void)startGetQAWithQAId:(NSString *)qAId andPage:(int)page success:(void(^)(NSArray *talkMessages))success failure:(void(^)(NSString *error_message))failure;
 
 //用户追加咨询
 - (void)startSendTalkMessage:(NSString *)message andQAID:(NSString *)qAId success:(void(^)(NSArray *talkMessages))success failure:(void(^)(NSString *error_message))failure;

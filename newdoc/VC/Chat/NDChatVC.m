@@ -27,6 +27,8 @@
  */
 @property (nonatomic, strong) NSDictionary *relayDict;
 
+@property (nonatomic, assign) int page;
+
 @end
 
 @implementation NDChatVC
@@ -34,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    WEAK_SELF;
     
     self.view.height -= 44;
     
@@ -55,17 +59,48 @@
     self.inputView.delegate = self;
     
     
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakself onRefreshHeader];
+        [weakself.tableView.header endRefreshing];
+    }];
+    
+    // 添加上拉刷新尾部控件
+    self.tableView.footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        [weakself onRefreshFooter];
+        [weakself.tableView.footer endRefreshing];
+    }];
+    
+    [self startGet];
+}
+
+- (void)onRefreshHeader{
+    self.page = 0;
+    
+    [self startGet];
+}
+
+- (void)onRefreshFooter{
+    self.page ++;
+    
     [self startGet];
 }
 
 - (void)startGet{
     WEAK_SELF;
     
-    [self startGetQAWithQAId:self.qaMesaage.ID success:^(NSArray *talkMessages) {
+    [self startGetQAWithQAId:self.qaMesaage.ID andPage:self.page success:^(NSArray *talkMessages) {
         
         FLog(@"%@", talkMessages);
         
-        weakself.talkMessages = talkMessages;
+        if(self.page){
+            NSMutableArray *tempArr = [NSMutableArray arrayWithArray:weakself.talkMessages];
+            [tempArr addObjectsFromArray:talkMessages];
+            weakself.talkMessages = tempArr;
+        }else{
+            weakself.talkMessages = talkMessages;
+        }
+        
+        //        weakself.talkMessages = talkMessages;
         
         NSMutableArray *tempArray = [NSMutableArray array];
         for (NDTalkMessage *talkMessage in talkMessages) {
@@ -101,7 +136,7 @@
         [weakself.tableView reloadData];
         
         [weakself scrollToLastRow];
-
+        
     } failure:^(NSString *error_message) {
         
     }];
@@ -114,7 +149,7 @@
     [self sendMessage:textField.text andType:NDMessageTypeMe];
     
     // 2. 自动回复一条
-//    [self sendMessage:[self autoRelayWithText:textField.text] andType:NDMessageTypeOther];
+    //    [self sendMessage:[self autoRelayWithText:textField.text] andType:NDMessageTypeOther];
     
     // 3. 清空文字
     self.inputView.text = nil;
@@ -162,7 +197,7 @@
     fmt.dateFormat = @"HH:mm";
     //    yyyy-MM-dd HH:mm:ss
     NSString *nowTime = [fmt stringFromDate:now];
-//    message.time = nowTime;
+    //    message.time = nowTime;
     
     // 是否需要隐藏时间
     NDMessageFrame *lastMsgFrame = [self.messageFrames lastObject];
@@ -258,34 +293,34 @@
 - (NSMutableArray *)messageFrames
 {
     if (_messageFrames == nil) {
-////        NSArray *dictArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"messages.plist" ofType:nil]];
-//        NSMutableArray *tempArray = [NSMutableArray array];
-//        for (NDTalkMessage *talkMessage in self.talkMessages) {
-//            NDMessage *message = [[NDMessage alloc] init];
-//            message.text = talkMessage.content;
-//            if([talkMessage.poster_name isEqualToString:[NDCoreSession coreSession].user.name]){
-//                message.type = NDMessageTypeMe;
-//            }else{
-//                message.type = NDMessageTypeOther;
-//            }
-////            message.time = qaMessage
-//            
-//            // 取出上一个大的数据模型
-//            NDMessageFrame *lastMf = [tempArray lastObject];
-//            // 取出上一个小的数据模型
-//            NDMessage *lastMsg = lastMf.message;
-//            
-//            // 判断当前条message的时间和上一条message的时间是否一样
-//            message.hideTime = [message.time isEqualToString:lastMsg.time];
-//            
-//            NDMessageFrame *messageFrame = [[NDMessageFrame alloc] init];
-//            
-//            // 这个set方法结束以后，子控件的frame和cell行高计算完了
-//            messageFrame.message = message;
-//            
-//            [tempArray addObject:messageFrame];
-//        }
-//        _messageFrames = tempArray;
+        ////        NSArray *dictArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"messages.plist" ofType:nil]];
+        //        NSMutableArray *tempArray = [NSMutableArray array];
+        //        for (NDTalkMessage *talkMessage in self.talkMessages) {
+        //            NDMessage *message = [[NDMessage alloc] init];
+        //            message.text = talkMessage.content;
+        //            if([talkMessage.poster_name isEqualToString:[NDCoreSession coreSession].user.name]){
+        //                message.type = NDMessageTypeMe;
+        //            }else{
+        //                message.type = NDMessageTypeOther;
+        //            }
+        ////            message.time = qaMessage
+        //
+        //            // 取出上一个大的数据模型
+        //            NDMessageFrame *lastMf = [tempArray lastObject];
+        //            // 取出上一个小的数据模型
+        //            NDMessage *lastMsg = lastMf.message;
+        //
+        //            // 判断当前条message的时间和上一条message的时间是否一样
+        //            message.hideTime = [message.time isEqualToString:lastMsg.time];
+        //
+        //            NDMessageFrame *messageFrame = [[NDMessageFrame alloc] init];
+        //
+        //            // 这个set方法结束以后，子控件的frame和cell行高计算完了
+        //            messageFrame.message = message;
+        //
+        //            [tempArray addObject:messageFrame];
+        //        }
+        //        _messageFrames = tempArray;
         _messageFrames = [NSMutableArray array];
     }
     return _messageFrames;

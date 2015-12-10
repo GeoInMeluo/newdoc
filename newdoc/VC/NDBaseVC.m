@@ -23,13 +23,26 @@
     return _showKeyboardViews;
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setup];
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    if (self.navigationController.viewControllers.count == 1){
+        return NO;
+    }
+　　 else{
+        return YES;
+    }
+}
+
 - (void)setup{
+    self . navigationController .interactivePopGestureRecognizer.delegate = self;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (doneButtonshow:) name: UIKeyboardDidShowNotification object:nil];
     
     // 设置CGRectZero从导航栏下开始计算

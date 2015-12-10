@@ -8,6 +8,7 @@
 
 #import "NDBaseTableVC.h"
 #import "NDBaseNavVC.h"
+#import "MJRefresh.h"
 
 @interface NDBaseTableVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) UIButton *doneButton;
@@ -48,6 +49,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self . navigationController .interactivePopGestureRecognizer.delegate = self;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (doneButtonshow:) name: UIKeyboardDidShowNotification object:nil];
     
     if(self.sections.count == 0){
@@ -76,6 +79,16 @@
         [leftNavBtn addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
         
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftNavBtn];
+    }
+}
+
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    if (self.navigationController.viewControllers.count == 1){
+        return NO;
+    }
+    　　 else{
+        return YES;
     }
 }
 
@@ -259,4 +272,37 @@
     
 }
 
+- (void)addHeader
+{
+    __unsafe_unretained typeof(self) weakself = self;
+    
+    
+    // 添加下拉刷新头部控件
+    
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakself onRefreshHeader];
+        [weakself.tableView.header endRefreshing];
+    }];
+    
+    //#warning 自动刷新(一进入程序就下拉刷新)
+//    [self.tableView headerBeginRefreshing];
+}
+
+- (void)addFooter
+{
+    __unsafe_unretained typeof(self) weakself = self;
+    // 添加上拉刷新尾部控件
+    self.tableView.footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        [weakself onRefreshFooter];
+        [weakself.tableView.footer endRefreshing];
+    }];
+}
+
+- (void)onRefreshHeader{
+
+}
+
+- (void)onRefreshFooter{
+    
+}
 @end

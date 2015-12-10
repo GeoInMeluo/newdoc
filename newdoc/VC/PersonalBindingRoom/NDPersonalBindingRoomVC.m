@@ -12,6 +12,8 @@
 
 @interface NDPersonalBindingRoomVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *roomNames;
+
+@property (nonatomic, assign) int page;
 @end
 
 @implementation NDPersonalBindingRoomVC
@@ -29,14 +31,37 @@
     
     self.title = @"我绑定的诊室";
     
+    [self addHeader];
+    [self addFooter];
+    
+    [self startGet];
+}
+
+- (void)onRefreshFooter{
+    self.page++;
+    
+    [self startGet];
+}
+
+- (void)onRefreshHeader{
+    self.page = 0;
     [self startGet];
 }
 
 - (void)startGet{
     WEAK_SELF;
     
-    [self startGetBindRoomsWithAndSuccess:^(NSArray *roomNames) {
-        weakself.roomNames = roomNames;
+    [self startGetBindRoomsWithPage:self.page andSuccess:^(NSArray *roomNames) {
+        
+        if(self.page){
+            NSMutableArray *tempArr = [NSMutableArray arrayWithArray:weakself.roomNames];
+            [tempArr addObjectsFromArray:roomNames];
+            weakself.roomNames = tempArr;
+        }else{
+            weakself.roomNames = roomNames;
+        }
+        
+//        weakself.roomNames = roomNames;
         [weakself.tableView reloadData];
     } failure:^(NSString *error_message) {
         

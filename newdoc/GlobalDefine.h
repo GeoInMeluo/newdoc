@@ -37,6 +37,10 @@ VcClassName * vc = [[VcClassName alloc] init]; \
 #define Blue [UIColor colorWithHex:@"#00AAFF"]
 #define kScreenSize [UIScreen mainScreen].bounds.size
 
+#define kRefreshHeader 0
+#define kRefreshFooter 1
+
+
 //#define kHostStr @"http://api.xinyijk.com"
 #define kHostStr @"http://newdoc.meluo.net"
 

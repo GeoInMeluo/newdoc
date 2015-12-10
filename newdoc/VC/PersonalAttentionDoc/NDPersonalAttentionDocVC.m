@@ -12,6 +12,8 @@
 
 @interface NDPersonalAttentionDocVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSArray *docs;
+
+@property (nonatomic, assign) int page;
 @end
 
 @implementation NDPersonalAttentionDocVC
@@ -28,10 +30,35 @@
     
     self.title = @"我关注的医生";
     
+    [self addHeader];
+    [self addFooter];
+    
+    
+}
+
+- (void)onRefreshHeader{
+    self.page = 0;
+    
+    [self startGet];
+}
+
+- (void)onRefreshFooter{
+    self.page ++;
+    
+    [self startGet];
+}
+
+- (void)startGet{
     WEAK_SELF;
     
-    [self startGetAttetionDocsWithAndSuccess:^(NSArray *doc) {
-        weakself.docs = doc;
+    [self startGetAttetionDocsWithAndPage:self.page success:^(NSArray *doc) {
+        if(self.page){
+            NSMutableArray *tempArr = [NSMutableArray arrayWithArray:weakself.docs];
+            [tempArr addObjectsFromArray:doc];
+            weakself.docs = tempArr;
+        }else{
+            weakself.docs = doc;
+        }
         
         [weakself.tableView reloadData];
     } failure:^(NSString *error_message) {

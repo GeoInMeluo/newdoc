@@ -28,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblHeaderDocGoodat;
 @property (weak, nonatomic) IBOutlet UITextView *tvComment;
 
-
+@property (nonatomic, assign) int page;
 @end
 
 @implementation NDRoomUserComment
@@ -47,6 +47,8 @@
 }
 
 - (void)setupUI{
+    WEAK_SELF;
+    
     self.title = @"用户评价";
     
     [self.showKeyboardViews addObjectsFromArray:@[self.tvComment]];
@@ -70,28 +72,58 @@
     self.starRateView.hasAnimation = YES;
     self.starRateView = starRateView;
     [self.startRateDiv addSubview:starRateView];
+    
+    
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakself onRefreshHeader];
+        [weakself.tableView.header endRefreshing];
+    }];
+    
+    self.tableView.footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        [weakself onRefreshFooter];
+        [weakself.tableView.footer endRefreshing];
+    }];
+}
+
+- (void)onRefreshHeader{
+    self.page = 0;
+    [self startGet];
+}
+
+- (void)onRefreshFooter{
+    self.page ++;
+    [self startGet];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    WEAK_SELF;
     
     self.tableView.frame = self.bottomView.bounds;
     self.tableView.hidden = NO;
     
     self.mineCommentView.frame = self.bottomView.bounds;
     
-    [self startGetDoctorCommentsWithDocId:self.doc.ID success:^(NSArray *docComments) {
+    [self startGet];
+
+}
+
+- (void)startGet{
+    WEAK_SELF;
+    
+    [self startGetDoctorCommentsWithDocId:self.doc.ID andPage:self.page success:^(NSArray *docComments) {
         
-        
-        weakself.docComments = docComments;
+        if(self.page){
+            NSMutableArray *tempArr = [NSMutableArray arrayWithArray:weakself.docComments];
+            [tempArr addObjectsFromArray:docComments];
+            weakself.docComments = tempArr;
+        }else{
+            weakself.docComments = docComments;
+        }
         
         [weakself.tableView reloadData];
     } failure:^(NSString *error_message) {
         
     }];
-
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

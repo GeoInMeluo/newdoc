@@ -24,6 +24,8 @@
 @property (nonatomic, strong) NSMutableArray *dateQAMessages;
 
 @property (nonatomic, weak) UITableView *currentSubTable;
+
+@property (nonatomic, assign) int page;
 @end
 
 @implementation NDPersonalReferVC
@@ -60,13 +62,31 @@
 }
 
 - (void)setup{
+    
+    
+    [self addHeader];
+    [self addFooter];
+ 
+    [self startGet];
+}
+
+- (void)startGet{
     WEAK_SELF;
     
-    [self startGetQAListAndSuccess:^(NSArray *qaMessages) {
-        weakself.qaMesaages = qaMessages;
+    [self startGetQAListAndPage:self.page success:^(NSArray *qaMessages) {
+        
+        if(self.page){
+            NSMutableArray *tempArr = [NSMutableArray arrayWithArray:weakself.qaMesaages];
+            [tempArr addObjectsFromArray:qaMessages];
+            weakself.qaMesaages = tempArr;
+        }else{
+            weakself.qaMesaages = qaMessages;
+        }
+        
+//        weakself.qaMesaages = qaMessages;
         
         @autoreleasepool {
-
+            
             if(!qaMessages){
                 return ;
             }
@@ -95,13 +115,26 @@
             }
             
         }
-     
+        
         FLog(@"%@", self.dateQAMessages);
         
         [weakself.tableView reloadData];
     } failure:^(NSString *error_message) {
         
     }];
+
+}
+
+- (void)onRefreshHeader{
+    self.page = 0;
+    
+    [self startGet];
+}
+
+- (void)onRefreshFooter{
+    self.page++;
+    
+    [self startGet];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

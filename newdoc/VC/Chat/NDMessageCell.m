@@ -108,7 +108,7 @@
     NDMessage *message = self.messageframe.message;
     //  时间
     self.timeView.text = message.time;
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:message.icon_url]];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:message.icon_url] placeholderImage:[UIImage imageNamed:@"icon_placeHolder"]];
     
     // 头像和气泡和文字颜色
     if (message.type == NDMessageTypeMe) {

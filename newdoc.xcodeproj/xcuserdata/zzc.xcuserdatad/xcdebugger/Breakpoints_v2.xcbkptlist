@@ -19,13 +19,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "newdoc/VC/RoomDetail/NDRoomDetailDocCell.m"
-            timestampString = "470854948.908431"
+            filePath = "newdoc/VC/RoomMap/NDRoomMapVC.m"
+            timestampString = "471409234.357643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "-setDoctor:"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-refreshFooter"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "newdoc/VC/RoomMap/NDRoomMapVC.m"
+            timestampString = "471409234.357643"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-refreshHeader"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "newdoc/VC/RoomMap/NDRoomMapVC.m"
+            timestampString = "471409370.946893"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-startGetRoomsWithLocation:andCityName:andCountyName:andPage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
