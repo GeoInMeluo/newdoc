@@ -857,7 +857,11 @@
 - (void)startUploadImageWithImages:(NSArray *)images  success:(void(^)(NSArray *imgUrls))success failure:(void(^)(NSString *error_message))failure{
     
     NSMutableArray *temp = [NSMutableArray arrayWithArray:images];
-    [temp removeLastObject];
+    
+    if(images.count > 1){
+        [temp removeLastObject];
+    }
+    
     
     [MBProgressHUD showMessage:@""];
     

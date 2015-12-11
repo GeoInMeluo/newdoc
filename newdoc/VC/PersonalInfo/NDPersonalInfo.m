@@ -79,9 +79,14 @@
     
     [self initWithCells];
 
+    UIButton *button = [[UIButton alloc] init];
+    [button setTitle:@"保存" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(rightBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [button sizeToFit];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
-- (void)pop{
+- (void)rightBtnClicked:(UIButton *)btn{
     WEAK_SELF;
     
    [NDCoreSession coreSession].user.name = self.lblName.text;
