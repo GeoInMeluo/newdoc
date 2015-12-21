@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NDQAOnlineVC">
             <connections>
+                <outlet property="btnPost" destination="ebD-nG-ff4" id="1BZ-LM-eCO"/>
                 <outlet property="btnSubmit" destination="GVC-g7-cDQ" id="A51-yk-0em"/>
                 <outlet property="btnSubroom" destination="pgP-Lb-ZmE" id="NWT-yc-Sb0"/>
                 <outlet property="collectionView" destination="RUs-Sv-eVm" id="BIo-6c-qRH"/>
@@ -28,19 +29,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cF4-RC-Py5">
-                            <rect key="frame" x="45" y="14" width="26" height="16"/>
+                            <rect key="frame" x="31" y="14" width="26" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年龄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxc-aN-bhf">
-                            <rect key="frame" x="196" y="14" width="24" height="15"/>
+                            <rect key="frame" x="182" y="14" width="24" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7vb-zu-0pv">
-                            <rect key="frame" x="79" y="8" width="85" height="29"/>
+                            <rect key="frame" x="65" y="8" width="85" height="29"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <segments>
                                 <segment title="  男  "/>
@@ -49,7 +50,7 @@
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </segmentedControl>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AIe-Uk-syW">
-                            <rect key="frame" x="228" y="6" width="38" height="30"/>
+                            <rect key="frame" x="214" y="6" width="38" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="38" id="EfB-Z5-GZG"/>
                                 <constraint firstAttribute="height" constant="30" id="RcC-0U-SNn"/>
@@ -58,13 +59,13 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="咨询科室：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIq-zw-cR2">
-                            <rect key="frame" x="45" y="47" width="65" height="16"/>
+                            <rect key="frame" x="31" y="47" width="65" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgP-Lb-ZmE">
-                            <rect key="frame" x="118" y="41" width="83" height="28"/>
+                            <rect key="frame" x="104" y="41" width="83" height="28"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="Afp-66-cda"/>
@@ -79,7 +80,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问题描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBm-fb-WNu">
-                            <rect key="frame" x="45" y="71" width="52" height="16"/>
+                            <rect key="frame" x="31" y="71" width="52" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -90,7 +91,7 @@
                         <constraint firstItem="AIe-Uk-syW" firstAttribute="leading" secondItem="dxc-aN-bhf" secondAttribute="trailing" constant="8" id="1B1-V4-rwO"/>
                         <constraint firstAttribute="height" constant="92" id="2To-ZW-Dcs"/>
                         <constraint firstItem="AIe-Uk-syW" firstAttribute="top" secondItem="FGl-Ny-5Gh" secondAttribute="top" constant="6" id="7wQ-hK-hAK"/>
-                        <constraint firstItem="cF4-RC-Py5" firstAttribute="leading" secondItem="FGl-Ny-5Gh" secondAttribute="leading" constant="45" id="CAG-y6-k1V"/>
+                        <constraint firstItem="cF4-RC-Py5" firstAttribute="leading" secondItem="FGl-Ny-5Gh" secondAttribute="leading" constant="31" id="CAG-y6-k1V"/>
                         <constraint firstItem="cF4-RC-Py5" firstAttribute="top" secondItem="FGl-Ny-5Gh" secondAttribute="top" constant="14" id="CSm-AO-HFD"/>
                         <constraint firstItem="dxc-aN-bhf" firstAttribute="leading" secondItem="7vb-zu-0pv" secondAttribute="trailing" constant="32" id="KdL-ER-TJ5"/>
                         <constraint firstItem="pgP-Lb-ZmE" firstAttribute="top" secondItem="7vb-zu-0pv" secondAttribute="bottom" constant="5" id="P3L-FV-KNN"/>
@@ -105,13 +106,13 @@
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bNE-2z-7WA">
-                    <rect key="frame" x="8" y="91" width="359" height="290"/>
+                    <rect key="frame" x="8" y="91" width="359" height="290.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVC-g7-cDQ">
-                    <rect key="frame" x="22" y="482" width="331" height="45"/>
+                    <rect key="frame" x="22" y="482.5" width="331" height="45"/>
                     <color key="backgroundColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="ka4-e9-gQD"/>
@@ -125,7 +126,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RUs-Sv-eVm">
-                    <rect key="frame" x="40" y="417" width="295" height="45"/>
+                    <rect key="frame" x="40" y="417.5" width="295" height="45"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="I0U-mP-aG9"/>
@@ -142,13 +143,13 @@
                     </connections>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传病历/检查单/图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-6L-cqP">
-                    <rect key="frame" x="40" y="393" width="126" height="16"/>
+                    <rect key="frame" x="40" y="393.5" width="126" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebD-nG-ff4">
-                    <rect key="frame" x="174" y="389" width="66" height="23"/>
+                    <rect key="frame" x="174" y="389.5" width="66" height="23"/>
                     <color key="backgroundColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="23" id="QwA-qf-9nS"/>
@@ -161,7 +162,7 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="常见问题咨询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcI-xC-xxQ">
-                    <rect key="frame" x="40" y="539" width="72" height="15"/>
+                    <rect key="frame" x="40" y="539.5" width="72" height="14.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>

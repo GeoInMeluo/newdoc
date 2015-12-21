@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,14 +14,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="252" height="75"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一诊所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fXc-Sb-plE">
-                        <rect key="frame" x="8" y="8" width="68" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一诊所" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fXc-Sb-plE">
+                        <rect key="frame" x="8" y="19" width="236" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一诊所" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1fh-Vz-dux">
+                        <rect key="frame" x="8" y="52" width="236" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUV-yH-BI6" customClass="Button">
-                        <rect key="frame" x="176" y="3" width="76" height="30"/>
+                        <rect key="frame" x="176" y="0.0" width="76" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="76" id="Bmz-ts-4rg"/>
                             <constraint firstAttribute="height" constant="30" id="eEN-fN-Y2l"/>
@@ -29,12 +35,6 @@
                         <state key="normal" image="map_bindingRoom_large"/>
                         <state key="selected" image="map_bindingRoom_select"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一诊所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1fh-Vz-dux">
-                        <rect key="frame" x="8" y="52" width="236" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -43,8 +43,9 @@
                 <constraint firstAttribute="trailing" secondItem="JUV-yH-BI6" secondAttribute="trailing" id="6TP-fI-t3O"/>
                 <constraint firstItem="fXc-Sb-plE" firstAttribute="leading" secondItem="uVP-hA-ubs" secondAttribute="leading" constant="8" id="CzL-TQ-MuO"/>
                 <constraint firstAttribute="trailing" secondItem="1fh-Vz-dux" secondAttribute="trailing" constant="8" id="U7T-JW-IFm"/>
-                <constraint firstItem="JUV-yH-BI6" firstAttribute="top" secondItem="uVP-hA-ubs" secondAttribute="top" constant="3" id="VkS-gh-BJu"/>
-                <constraint firstItem="fXc-Sb-plE" firstAttribute="top" secondItem="uVP-hA-ubs" secondAttribute="top" constant="8" id="e00-tZ-u1L"/>
+                <constraint firstItem="JUV-yH-BI6" firstAttribute="top" secondItem="uVP-hA-ubs" secondAttribute="top" id="VkS-gh-BJu"/>
+                <constraint firstItem="fXc-Sb-plE" firstAttribute="top" secondItem="uVP-hA-ubs" secondAttribute="top" constant="19" id="e00-tZ-u1L"/>
+                <constraint firstAttribute="trailing" secondItem="fXc-Sb-plE" secondAttribute="trailing" constant="8" id="pdj-y1-ZTD"/>
                 <constraint firstAttribute="bottom" secondItem="1fh-Vz-dux" secondAttribute="bottom" constant="8" id="yG2-X6-Iay"/>
                 <constraint firstItem="1fh-Vz-dux" firstAttribute="leading" secondItem="uVP-hA-ubs" secondAttribute="leading" constant="8" id="zcp-Xv-t7Y"/>
             </constraints>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NDGuideVC">
+            <connections>
+                <outlet property="scrollView" destination="hij-P0-jJ9" id="dtr-Xe-UyD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hij-P0-jJ9">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="hij-P0-jJ9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Luv-Nb-VXx"/>
+                <constraint firstAttribute="trailing" secondItem="hij-P0-jJ9" secondAttribute="trailing" id="bUs-u2-NCv"/>
+                <constraint firstItem="hij-P0-jJ9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iFS-sK-0m9"/>
+                <constraint firstAttribute="bottom" secondItem="hij-P0-jJ9" secondAttribute="bottom" id="plb-2k-os2"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

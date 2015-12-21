@@ -27,7 +27,7 @@
         self.pageNumDictionary = [NSMutableDictionary dictionaryWithCapacity:1];
         self.pageNumArray = [NSMutableArray arrayWithCapacity:1];
         self.unselectedColor = [UMComTools colorWithHexString:FontColorGray];
-        self.selectedColor = [UMComTools colorWithHexString:FontColorBlue];
+        self.selectedColor = Blue;
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         imageView.image = UMComImageWithImageName(@"kuang");
         [self addSubview:imageView];

@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "newdoc/VC/RoomMap/NDRoomMapVC.m"
-            timestampString = "471409234.357643"
+            timestampString = "472117115.504746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-refreshFooter"
             landmarkType = "5">
          </BreakpointContent>
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "newdoc/VC/RoomMap/NDRoomMapVC.m"
-            timestampString = "471409234.357643"
+            timestampString = "472117115.504746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "-refreshHeader"
             landmarkType = "5">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "newdoc/VC/RoomMap/NDRoomMapVC.m"
-            timestampString = "471409370.946893"
+            timestampString = "472117115.504746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "-startGetRoomsWithLocation:andCityName:andCountyName:andPage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -84,12 +84,12 @@
                   moduleName = "newdoc"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zzc/Desktop/meluo/newdoc_ios/newdoc/VC/PersonalInfo/NDPersonalInfo.m"
-                  timestampString = "471500169.769697"
+                  timestampString = "472107032.286565"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "172"
                   endingLineNumber = "172"
-                  offsetFromSymbolStart = "420">
+                  offsetFromSymbolStart = "250">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -99,12 +99,12 @@
                   moduleName = "newdoc"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zzc/Desktop/meluo/newdoc_ios/newdoc/VC/PersonalInfo/NDPersonalInfo.m"
-                  timestampString = "471500169.770059"
+                  timestampString = "472107032.286794"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "276">
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -138,6 +138,38 @@
             startingLineNumber = "926"
             endingLineNumber = "926"
             landmarkName = "-startUploadImageWithImages:success:failure:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "newdoc/Protalcal/NSObject+Protalcals.m"
+            timestampString = "471949270.344573"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1228"
+            endingLineNumber = "1228"
+            landmarkName = "-startGetAppHomeInfoWithDate:success:failure:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "newdoc/VC/RoomDocDetail/NDRoomDocDetail.m"
+            timestampString = "472107032.224374"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-setupUI"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -41,6 +41,9 @@
     [self appendSection:@[self.cellPhoneNumber] withHeader:nil];
     [self appendSection:@[self.cellVerifyCode] withHeader:self.tempSectionHeader];
     
+    self.btnVerifyCode.layer.cornerRadius = self.btnVerifyCode.height / 2;
+    self.btnVerifyCode.layer.masksToBounds = YES;
+    
     self.btnConfirm.layer.cornerRadius = 5;
     self.btnConfirm.layer.masksToBounds = YES;
 }

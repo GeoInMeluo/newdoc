@@ -18,6 +18,7 @@
 #import "UMComTools.h"
 #import "UMComUser+UMComManagedObject.h"
 #import "UMComLocationModel.h"
+#import "WXApi.h"
 
 @interface UMComFeedsTableViewCell ()<UMComClickActionDelegate>
 
@@ -149,6 +150,15 @@
         totalHeight += self.feedStyleView.frame.size.height;
         self.shareButton.hidden = NO;
     } else {
+        self.shareButton.hidden = YES;
+    }
+    
+
+    if([WXApi isWXAppInstalled]) {
+        //装了展示出来
+        self.shareButton.hidden = NO;
+    } else {
+        //没装不要在 UI 上展示
         self.shareButton.hidden = YES;
     }
     

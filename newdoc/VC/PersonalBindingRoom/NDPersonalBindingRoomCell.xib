@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RVT-dM-OgR" id="QWT-iP-uzd">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="35.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="柳州市第一诊室" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVv-dL-lh2">
@@ -25,12 +25,22 @@
                         <rect key="frame" x="286" y="5" width="76" height="25"/>
                         <state key="normal" image="map_enterRoom"/>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQ2-8R-gGO">
+                        <rect key="frame" x="23" y="34" width="352" height="1"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="3N7-KW-2LU"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="QVH-Jk-Wpd" firstAttribute="top" secondItem="QWT-iP-uzd" secondAttribute="topMargin" constant="-3" id="3Km-mE-BgT"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="BQ2-8R-gGO" secondAttribute="bottom" constant="-8" id="JCf-el-jkz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="BQ2-8R-gGO" secondAttribute="trailing" constant="-8" id="KV5-Gd-YfP"/>
                     <constraint firstAttribute="bottomMargin" secondItem="QVH-Jk-Wpd" secondAttribute="bottom" constant="-3" id="LUS-F3-YOA"/>
                     <constraint firstItem="zVv-dL-lh2" firstAttribute="centerY" secondItem="QWT-iP-uzd" secondAttribute="centerY" id="ZtA-HJ-Rgt"/>
                     <constraint firstItem="zVv-dL-lh2" firstAttribute="leading" secondItem="QWT-iP-uzd" secondAttribute="leadingMargin" constant="15" id="cno-xI-5wq"/>
+                    <constraint firstItem="BQ2-8R-gGO" firstAttribute="leading" secondItem="QWT-iP-uzd" secondAttribute="leadingMargin" constant="15" id="f6A-Ui-Thh"/>
                     <constraint firstAttribute="trailingMargin" secondItem="QVH-Jk-Wpd" secondAttribute="trailing" constant="5" id="qQD-Gj-jn3"/>
                 </constraints>
             </tableViewCellContentView>
@@ -38,7 +48,7 @@
                 <outlet property="btnEnter" destination="QVH-Jk-Wpd" id="Rar-4A-pL5"/>
                 <outlet property="lblRoomName" destination="zVv-dL-lh2" id="2jN-Xd-laA"/>
             </connections>
-            <point key="canvasLocation" x="292.5" y="253"/>
+            <point key="canvasLocation" x="292.5" y="251"/>
         </tableViewCell>
     </objects>
     <resources>

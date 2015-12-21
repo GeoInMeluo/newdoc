@@ -15,6 +15,7 @@
 #import <ShareSDKConnector/ShareSDKConnector.h>
 #import "APService.h"
 #import "NDLoginVC.h"
+#import "NDGuideVC.h"
 #import "UMComLoginManager.h"
 #import "UMSocialWechatHandler.h"
 
@@ -59,15 +60,23 @@
     [self setupUmengCommunity];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
-    NDBaseTabVC *tabVC = [[NDBaseTabVC alloc] init];
     
-    self.window.rootViewController = tabVC;
+    NSString *versionStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"version"];
+    
+    if(versionStr.length == 0 || [versionStr intValue] < kVersion){
+        //启动引导页
+        
+        self.window.rootViewController = [NDGuideVC new];
+        
+        
+        
+    }else{
+        NDBaseTabVC *tabVC = [[NDBaseTabVC alloc] init];
+        
+        self.window.rootViewController = tabVC;
+    }
     
     [self.window makeKeyAndVisible];
-    
-
-    
     
     return YES;
 }

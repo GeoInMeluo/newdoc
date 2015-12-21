@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfPassword;
 @property (nonatomic, weak) Button *btnRegist;
 @property (weak, nonatomic) IBOutlet Button *btnForgetPwd;
+@property (weak, nonatomic) IBOutlet UIView *vOtherLogin;
 
 @end
 
@@ -88,6 +89,14 @@
     self.btnForgetPwd.callback = ^(Button *btn){
         [weakself.navigationController pushViewController:[NDPersonalForgetPwdVC new] animated:YES];
     };
+    
+    if([WXApi isWXAppInstalled]) {
+        //装了展示出来
+        self.vOtherLogin.hidden = NO;
+    } else {
+        //没装不要在 UI 上展示
+        self.vOtherLogin.hidden = YES;
+    }
 }
 
 - (IBAction)btnLoginClick:(UIButton *)sender {

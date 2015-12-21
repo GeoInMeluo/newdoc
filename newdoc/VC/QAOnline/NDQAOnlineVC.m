@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong) NSArray *commonQAs;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnPost;
+
 @end
 
 @implementation NDQAOnlineVC
@@ -84,6 +86,15 @@
     [button addTarget:self action:@selector(rightBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     [button sizeToFit];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    self.btnPost.layer.cornerRadius = 5;
+    self.btnPost.layer.masksToBounds = YES;
+    
+    self.btnSubmit.layer.cornerRadius = 5;
+    self.btnSubmit.layer.masksToBounds = YES;
+    
+    self.btnSubroom.layer.cornerRadius = 5;
+    self.btnSubroom.layer.masksToBounds = YES;
 }
 
 - (void)rightBtnClicked:(UIButton *)btn{

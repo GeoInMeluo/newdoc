@@ -139,7 +139,6 @@
 		32D2E9FB1BE7698D00DC12C5 /* NDPersonalOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D2E9F91BE7698D00DC12C5 /* NDPersonalOrderCell.xib */; };
 		32D2E9FE1BE9C56100DC12C5 /* NDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2E9FD1BE9C56100DC12C5 /* NDUser.m */; };
 		32D2EA011BE9DE6C00DC12C5 /* NDCoreSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2EA001BE9DE6C00DC12C5 /* NDCoreSession.m */; };
-		32D2EA051BE9F6CB00DC12C5 /* ic_tem_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D2EA041BE9F6CB00DC12C5 /* ic_tem_head.png */; };
 		32D2EA081BEAEF3C00DC12C5 /* FormSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2EA071BEAEF3C00DC12C5 /* FormSection.m */; };
 		32D2EA0F1BEB0AF100DC12C5 /* NDPersonalRegistBindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2EA0D1BEB0AF100DC12C5 /* NDPersonalRegistBindVC.m */; };
 		32D2EA101BEB0AF100DC12C5 /* NDPersonalRegistBindVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D2EA0E1BEB0AF100DC12C5 /* NDPersonalRegistBindVC.xib */; };
@@ -307,7 +306,6 @@
 		32D84E681C0811E600FB3D54 /* NDUserProtalcalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D84E661C0811E600FB3D54 /* NDUserProtalcalVC.xib */; };
 		32D84E6C1C08120100FB3D54 /* NDShengmingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D84E6A1C08120100FB3D54 /* NDShengmingVC.m */; };
 		32D84E6D1C08120100FB3D54 /* NDShengmingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D84E6B1C08120100FB3D54 /* NDShengmingVC.xib */; };
-		32DF857E1C1584400087C9CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DF85801C1584400087C9CC /* LaunchScreen.storyboard */; };
 		32DF85821C1594BD0087C9CC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DF85811C1594BD0087C9CC /* Default-568h@2x.png */; };
 		32E2297E1BDF3C0000AF12E7 /* NDRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2297D1BDF3C0000AF12E7 /* NDRoom.m */; };
 		32E229E81BDF3C7F00AF12E7 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E229941BDF3C7F00AF12E7 /* MJRefreshAutoFooter.m */; };
@@ -395,6 +393,10 @@
 		32F4CEA71BEC64130098958F /* NDPersonalResetPwd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F4CEA51BEC64130098958F /* NDPersonalResetPwd.xib */; };
 		32F4CEAA1BEE01560098958F /* NSObject+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F4CEA91BEE01560098958F /* NSObject+Util.m */; };
 		32F555561BDE626A00058144 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F555551BDE626A00058144 /* BaiduMapAPI_Location.framework */; };
+		32F9EADB1C1EA6CB0081A3A0 /* UIDevice+Addtional.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9EADA1C1EA6CB0081A3A0 /* UIDevice+Addtional.m */; };
+		32F9EAE51C1EC1D10081A3A0 /* NDGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9EAE31C1EC1D10081A3A0 /* NDGuideVC.m */; };
+		32F9EAE61C1EC1D10081A3A0 /* NDGuideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F9EAE41C1EC1D10081A3A0 /* NDGuideVC.xib */; };
+		32F9EB3B1C215A3B0081A3A0 /* NDHomeActive.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9EB3A1C215A3B0081A3A0 /* NDHomeActive.m */; };
 		32FD439B1BD690EC006D1CB7 /* NDPersonalChangePwd.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FD43991BD690EC006D1CB7 /* NDPersonalChangePwd.m */; };
 		32FD439C1BD690EC006D1CB7 /* NDPersonalChangePwd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FD439A1BD690EC006D1CB7 /* NDPersonalChangePwd.xib */; };
 		32FD49551BC790660054D2EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FD49541BC790660054D2EA /* main.m */; };
@@ -661,7 +663,6 @@
 		32D2E9FD1BE9C56100DC12C5 /* NDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDUser.m; sourceTree = "<group>"; };
 		32D2E9FF1BE9DE6C00DC12C5 /* NDCoreSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDCoreSession.h; sourceTree = "<group>"; };
 		32D2EA001BE9DE6C00DC12C5 /* NDCoreSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDCoreSession.m; sourceTree = "<group>"; };
-		32D2EA041BE9F6CB00DC12C5 /* ic_tem_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_tem_head.png; path = Assets.xcassets/temp/icon_placeHolder.imageset/ic_tem_head.png; sourceTree = "<group>"; };
 		32D2EA061BEAEF3C00DC12C5 /* FormSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormSection.h; sourceTree = "<group>"; };
 		32D2EA071BEAEF3C00DC12C5 /* FormSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormSection.m; sourceTree = "<group>"; };
 		32D2EA0C1BEB0AF100DC12C5 /* NDPersonalRegistBindVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NDPersonalRegistBindVC.h; path = ../Regist/NDPersonalRegistBindVC.h; sourceTree = "<group>"; };
@@ -1007,7 +1008,6 @@
 		32D84E691C08120100FB3D54 /* NDShengmingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDShengmingVC.h; sourceTree = "<group>"; };
 		32D84E6A1C08120100FB3D54 /* NDShengmingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDShengmingVC.m; sourceTree = "<group>"; };
 		32D84E6B1C08120100FB3D54 /* NDShengmingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDShengmingVC.xib; sourceTree = "<group>"; };
-		32DF857F1C1584400087C9CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32DF85811C1594BD0087C9CC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Assets.xcassets/Default.imageset/Default-568h@2x.png"; sourceTree = "<group>"; };
 		32E2297C1BDF3C0000AF12E7 /* NDRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDRoom.h; sourceTree = "<group>"; };
 		32E2297D1BDF3C0000AF12E7 /* NDRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDRoom.m; sourceTree = "<group>"; };
@@ -1169,6 +1169,13 @@
 		32F4CEA81BEE01560098958F /* NSObject+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Util.h"; sourceTree = "<group>"; };
 		32F4CEA91BEE01560098958F /* NSObject+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Util.m"; sourceTree = "<group>"; };
 		32F555551BDE626A00058144 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
+		32F9EAD91C1EA6CB0081A3A0 /* UIDevice+Addtional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Addtional.h"; sourceTree = "<group>"; };
+		32F9EADA1C1EA6CB0081A3A0 /* UIDevice+Addtional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Addtional.m"; sourceTree = "<group>"; };
+		32F9EAE21C1EC1D10081A3A0 /* NDGuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDGuideVC.h; sourceTree = "<group>"; };
+		32F9EAE31C1EC1D10081A3A0 /* NDGuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDGuideVC.m; sourceTree = "<group>"; };
+		32F9EAE41C1EC1D10081A3A0 /* NDGuideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDGuideVC.xib; sourceTree = "<group>"; };
+		32F9EB391C215A3B0081A3A0 /* NDHomeActive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDHomeActive.h; sourceTree = "<group>"; };
+		32F9EB3A1C215A3B0081A3A0 /* NDHomeActive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDHomeActive.m; sourceTree = "<group>"; };
 		32FD43981BD690EC006D1CB7 /* NDPersonalChangePwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDPersonalChangePwd.h; sourceTree = "<group>"; };
 		32FD43991BD690EC006D1CB7 /* NDPersonalChangePwd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDPersonalChangePwd.m; sourceTree = "<group>"; };
 		32FD439A1BD690EC006D1CB7 /* NDPersonalChangePwd.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDPersonalChangePwd.xib; sourceTree = "<group>"; };
@@ -2448,6 +2455,8 @@
 				32D84E4F1C072BCA00FB3D54 /* NDDocSelfSick.m */,
 				32D84E511C07308A00FB3D54 /* NDBodyArea.h */,
 				32D84E521C07308A00FB3D54 /* NDBodyArea.m */,
+				32F9EB391C215A3B0081A3A0 /* NDHomeActive.h */,
+				32F9EB3A1C215A3B0081A3A0 /* NDHomeActive.m */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
@@ -2725,6 +2734,16 @@
 			path = PersonalForgetPwd;
 			sourceTree = "<group>";
 		};
+		32F9EADC1C1EAA9E0081A3A0 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				32F9EAE21C1EC1D10081A3A0 /* NDGuideVC.h */,
+				32F9EAE31C1EC1D10081A3A0 /* NDGuideVC.m */,
+				32F9EAE41C1EC1D10081A3A0 /* NDGuideVC.xib */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
 		32FD43971BD6908F006D1CB7 /* PersonalChangePwd */ = {
 			isa = PBXGroup;
 			children = (
@@ -2776,9 +2795,7 @@
 			isa = PBXGroup;
 			children = (
 				32DF85811C1594BD0087C9CC /* Default-568h@2x.png */,
-				32DF85801C1584400087C9CC /* LaunchScreen.storyboard */,
 				32EF755B1BF5EA6E003CBB95 /* messages.plist */,
-				32D2EA041BE9F6CB00DC12C5 /* ic_tem_head.png */,
 				32FD49561BC790660054D2EA /* AppDelegate.h */,
 				32FD49571BC790660054D2EA /* AppDelegate.mm */,
 				32FD495F1BC790660054D2EA /* Assets.xcassets */,
@@ -2835,6 +2852,8 @@
 		32FD49891BC790A70054D2EA /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				32F9EAD91C1EA6CB0081A3A0 /* UIDevice+Addtional.h */,
+				32F9EADA1C1EA6CB0081A3A0 /* UIDevice+Addtional.m */,
 				32FD499A1BC7A4300054D2EA /* NSDate+Util.h */,
 				32FD499B1BC7A4300054D2EA /* NSDate+Util.m */,
 				32FD499C1BC7A4300054D2EA /* NSObject+Json.h */,
@@ -2888,6 +2907,7 @@
 		32FD498C1BC790A70054D2EA /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				32F9EADC1C1EAA9E0081A3A0 /* Guide */,
 				32D84E591C08088800FB3D54 /* About */,
 				329344CB1BD7F93C0029CF0D /* PersonalReferDetail */,
 				3292A9011BF9E029003DF24E /* DocSelf */,
@@ -3126,6 +3146,7 @@
 				32F0D4281BD53F9E00229828 /* NDPersonalInfo.xib in Resources */,
 				32D84E6D1C08120100FB3D54 /* NDShengmingVC.xib in Resources */,
 				32F0D4341BD54D3300229828 /* NDPersonalChangeGender.xib in Resources */,
+				32F9EAE61C1EC1D10081A3A0 /* NDGuideVC.xib in Resources */,
 				3292A9111BFC2BCF003DF24E /* NDQAMessageCenterCell.xib in Resources */,
 				329344C01BD7EE990029CF0D /* NDPersonalReferCell.xib in Resources */,
 				32F0D4191BD3D93800229828 /* NDRoomSelectLocationVC.xib in Resources */,
@@ -3184,7 +3205,6 @@
 				32C658321BD6DE5E00490F37 /* NDLoginVC.xib in Resources */,
 				32F0D44B1BD5FCBC00229828 /* NDPersonalApproveVC.xib in Resources */,
 				329344B51BD7E8630029CF0D /* NDPersonalBindingRoomCell.xib in Resources */,
-				32DF857E1C1584400087C9CC /* LaunchScreen.storyboard in Resources */,
 				32D83ABF1C08644B00E8271E /* FZLanTingHei-L-GBK-M.TTF in Resources */,
 				32D83B321C08644B00E8271E /* UMSCommentInputControlleriPad.xib in Resources */,
 				3261976E1BCC185D00351022 /* PushConfig.plist in Resources */,
@@ -3193,7 +3213,6 @@
 				326197551BCBFB4A00351022 /* ShareSDK.bundle in Resources */,
 				32D83AF61C08644B00E8271E /* UMComFriendTableViewCell.xib in Resources */,
 				32C658401BD6EF6B00490F37 /* NDPersonalEhrCell.xib in Resources */,
-				32D2EA051BE9F6CB00DC12C5 /* ic_tem_head.png in Resources */,
 				32D83B371C08644B00E8271E /* UMSShareListController.xib in Resources */,
 				32D2E9F61BE7691A00DC12C5 /* NDPersonalOrderVC.xib in Resources */,
 				329344D01BD7F96A0029CF0D /* NDPersonalReferDetail.xib in Resources */,
@@ -3370,6 +3389,7 @@
 				32E229EA1BDF3C7F00AF12E7 /* MJRefreshComponent.m in Sources */,
 				32D83B131C08644B00E8271E /* UMComHorizontalTableView.m in Sources */,
 				32D83AEA1C08644B00E8271E /* UMComTableViewController.m in Sources */,
+				32F9EADB1C1EA6CB0081A3A0 /* UIDevice+Addtional.m in Sources */,
 				32FD4DBA1BC82E320054D2EA /* NDBaseTabVC.m in Sources */,
 				32D83B061C08644B00E8271E /* UMComFeedDetailViewController.m in Sources */,
 				32FD49A81BC7A4300054D2EA /* NSObject+Json.m in Sources */,
@@ -3445,6 +3465,7 @@
 				32368FAF1BE24EE700018176 /* NDSlot.m in Sources */,
 				32647D6E1BD1F67D0099D7A8 /* NDRoomDetailDocCell.m in Sources */,
 				320FACB11BFEEE6E00E374A1 /* MJPropertyKey.m in Sources */,
+				32F9EB3B1C215A3B0081A3A0 /* NDHomeActive.m in Sources */,
 				32C6583A1BD6EDA900490F37 /* NDPersonalEhrVC.m in Sources */,
 				32647D5E1BD152820099D7A8 /* NDRoomSelectMoreVC.m in Sources */,
 				32E229FC1BDF3C7F00AF12E7 /* NSData+ImageContentType.m in Sources */,
@@ -3465,6 +3486,7 @@
 				3292A9051BF9E0B0003DF24E /* NDDocSelfVC.m in Sources */,
 				32D83AB51C08644B00E8271E /* UMComLoginManager.m in Sources */,
 				32F0D41E1BD4954D00229828 /* NDPersonalCenterHomeVC.m in Sources */,
+				32F9EAE51C1EC1D10081A3A0 /* NDGuideVC.m in Sources */,
 				32E229EB1BDF3C7F00AF12E7 /* MJRefreshFooter.m in Sources */,
 				32D83ACE1C08644B00E8271E /* UMComMutiStyleTextView.m in Sources */,
 				32D83AC61C08644B00E8271E /* UMComButton.m in Sources */,
@@ -3545,14 +3567,6 @@
 				32D83AA31C08644B00E8271E /* zh-Hans */,
 			);
 			name = UMSocialLocalizable.strings;
-			sourceTree = "<group>";
-		};
-		32DF85801C1584400087C9CC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				32DF857F1C1584400087C9CC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -3648,6 +3662,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -3697,6 +3712,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;

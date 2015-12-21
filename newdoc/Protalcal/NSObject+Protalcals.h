@@ -22,6 +22,7 @@
 #import "NDQAMessage.h"
 #import "NDTalkMessage.h"
 #import "NDCommonQA.h"
+#import "NDHomeActive.h"
 
 @interface NSObject (Protalcals)
 //获取验证码
@@ -153,5 +154,6 @@
 //得到全部科室
 - (void)startAllSubroomAndSuccess:(void(^)(NSArray *subrooms))success failure:(void(^)(NSString *error_message))failure;
 
-
+//得到app主页信息
+- (void)startGetAppHomeInfoWithDate:(NSDate *)date success:(void(^)(NSArray *actives))success failure:(void(^)(NSString *error_message))failure;
 @end

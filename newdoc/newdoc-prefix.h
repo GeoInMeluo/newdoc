@@ -38,6 +38,7 @@
 #import "MBProgressHUD+MJ.h"
 #import "NSObject+Util.h"
 #import "NSObject+Json.h"
+#import "UIDevice+Addtional.h"
 #endif
 
 

@@ -79,6 +79,7 @@
     
     UIButton *button = [[UIButton alloc] init];
     [button setImage:[UIImage imageNamed:@"map_rightBtn"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"map_rightBtn_map"] forState:UIControlStateSelected];
     [button addTarget:self action:@selector(rightBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     [button sizeToFit];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];

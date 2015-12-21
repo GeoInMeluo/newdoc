@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -64,7 +64,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_phone" translatesAutoresizingMaskIntoConstraints="NO" id="8Qv-8C-z6V">
-                        <rect key="frame" x="36" y="20" width="13" height="18"/>
+                        <rect key="frame" x="16" y="20" width="13" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="23" id="gcv-cJ-tfB"/>
                             <constraint firstAttribute="width" constant="15" id="t2R-Xl-fdb"/>
@@ -77,7 +77,7 @@
                         </variation>
                     </imageView>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3k-5Y-0WB">
-                        <rect key="frame" x="57" y="0.0" width="169" height="57"/>
+                        <rect key="frame" x="37" y="0.0" width="189" height="57"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
@@ -90,7 +90,7 @@
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pih-SO-FW2">
                         <rect key="frame" x="234" y="14" width="78" height="30"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="78" id="Cq7-e0-AbA"/>
                             <constraint firstAttribute="height" constant="30" id="GQg-CK-QJX"/>
@@ -114,7 +114,7 @@
                     <constraint firstItem="e3k-5Y-0WB" firstAttribute="leading" secondItem="8Qv-8C-z6V" secondAttribute="trailing" constant="8" id="PDe-EV-oSg"/>
                     <constraint firstItem="Pih-SO-FW2" firstAttribute="centerY" secondItem="TAC-bU-1r6" secondAttribute="centerY" id="TWN-fy-UZF"/>
                     <constraint firstItem="sIn-x5-pmn" firstAttribute="leading" secondItem="TAC-bU-1r6" secondAttribute="leadingMargin" constant="-8" id="WIS-7Y-mKx"/>
-                    <constraint firstItem="8Qv-8C-z6V" firstAttribute="leading" secondItem="TAC-bU-1r6" secondAttribute="leadingMargin" constant="28" id="ZvF-fB-KGE"/>
+                    <constraint firstItem="8Qv-8C-z6V" firstAttribute="leading" secondItem="TAC-bU-1r6" secondAttribute="leadingMargin" constant="8" id="ZvF-fB-KGE"/>
                     <constraint firstItem="Pih-SO-FW2" firstAttribute="trailing" secondItem="TAC-bU-1r6" secondAttribute="trailingMargin" id="baM-TX-ubQ"/>
                     <constraint firstAttribute="bottomMargin" secondItem="sIn-x5-pmn" secondAttribute="bottom" constant="-9" id="c8r-8G-Ed0"/>
                     <constraint firstAttribute="trailingMargin" secondItem="sIn-x5-pmn" secondAttribute="trailing" constant="-8" id="g6X-5g-h81"/>
@@ -132,7 +132,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xQB-1k-HC1">
-                        <rect key="frame" x="57" y="0.0" width="169" height="57"/>
+                        <rect key="frame" x="39" y="0.0" width="187" height="57"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
@@ -147,7 +147,7 @@
                 <constraints>
                     <constraint firstItem="xQB-1k-HC1" firstAttribute="top" secondItem="X0Y-JH-6d6" secondAttribute="topMargin" constant="-8" id="Dwc-Vd-Ahl"/>
                     <constraint firstAttribute="trailingMargin" secondItem="0rz-Hg-oWP" secondAttribute="trailing" constant="-8" id="Ebi-br-dZj"/>
-                    <constraint firstItem="xQB-1k-HC1" firstAttribute="leading" secondItem="X0Y-JH-6d6" secondAttribute="leadingMargin" constant="49" id="FOz-EL-eEG"/>
+                    <constraint firstItem="xQB-1k-HC1" firstAttribute="leading" secondItem="X0Y-JH-6d6" secondAttribute="leadingMargin" constant="31" id="FOz-EL-eEG"/>
                     <constraint firstItem="xQB-1k-HC1" firstAttribute="trailing" secondItem="X0Y-JH-6d6" secondAttribute="trailingMargin" constant="-86" id="UYQ-Mg-UCU"/>
                     <constraint firstAttribute="bottomMargin" secondItem="0rz-Hg-oWP" secondAttribute="bottom" constant="-9" id="inj-e8-eWC"/>
                     <constraint firstItem="0rz-Hg-oWP" firstAttribute="leading" secondItem="X0Y-JH-6d6" secondAttribute="leadingMargin" constant="-8" id="mD1-5s-Cdj"/>

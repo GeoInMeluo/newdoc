@@ -1200,4 +1200,36 @@
         
     }];
 }
+
+//得到app主页信息
+- (void)startGetAppHomeInfoWithDate:(NSDate *)date success:(void(^)(NSArray *actives))success failure:(void(^)(NSString *error_message))failure{
+    NSDictionary *param = @{};
+    
+    [[NDNetManager sharedNetManager] get:@"/prof/1/Homes" parameters:param success:^(NSDictionary *result) {
+        FLog(@"%@",result);
+        
+        NSMutableArray *actives = [NSMutableArray array];
+        
+        if([[result allKeys] containsObject:@"data"]){
+            if([[result[@"data"] allKeys] containsObject:@"subs"]){
+                for(id obj in result[@"data"][@"subs"]){
+                    NDHomeActive *active = [NDHomeActive mj_objectWithKeyValues:obj];
+                    
+                    [actives addObject:active];
+                }
+                success(actives);
+            }
+        }
+        
+        
+        
+    } failure:^(NSString *error_message) {
+        
+        failure(error_message);
+        
+        
+    }];
+
+}
 @end
+

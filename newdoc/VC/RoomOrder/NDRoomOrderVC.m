@@ -274,7 +274,7 @@
                 
             }else{
                 
-                btn.backgroundColor = [UIColor lightGrayColor];
+                btn.backgroundColor = [UIColor colorWithHex:@"#dddddd"];
                 
                 btn.layer.borderColor = [UIColor darkGrayColor].CGColor;
                 [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

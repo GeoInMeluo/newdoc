@@ -39,7 +39,8 @@
     [self startGetDoctorIntroWithDocId:self.doctor.ID success:^(NDDoctorIntro *intro) {
         weakself.docIntro = intro;
         
-        [weakself.btnHeader sd_setImageWithURL:[NSURL URLWithString:weakself.doctor.picture_url] forState:UIControlStateNormal];
+        [weakself.btnHeader sd_setImageWithURL:[NSURL URLWithString:weakself.doctor.picture_url] forState:UIControlStateNormal placeholderImage:[UIImage imageWithName:@"icon_placeHolder"]];
+
         weakself.lblDocName.text = weakself.doctor.name;
         weakself.lblDocTitle.text = weakself.doctor.title;
         weakself.lblGoodat.text = [NSString stringWithFormat:@"擅长：%@", weakself.doctor.goodat];

@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:@"#0099ff"]] forBarMetrics:UIBarMetricsDefault];
+    
     // Do any additional setup after loading the view.
 }
 

@@ -232,6 +232,7 @@
     titlePageControl.currentPage = 0;
     titlePageControl.selectedColor = [UIColor whiteColor];
     titlePageControl.unselectedColor = [UIColor blackColor];
+//    titlePageControl.backgroundColor = [UIColor whiteColor];
     
     [titlePageControl setItemImages:[NSArray arrayWithObjects:UMComImageWithImageName(@"left_frame"),UMComImageWithImageName(@"midle_frame"),UMComImageWithImageName(@"right_item"), nil]];
     __weak UMComHomeFeedViewController *wealSelf = self;

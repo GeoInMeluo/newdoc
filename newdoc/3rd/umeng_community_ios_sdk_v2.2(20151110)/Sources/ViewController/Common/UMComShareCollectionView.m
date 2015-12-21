@@ -14,6 +14,7 @@
 #import "UMComSession.h"
 #import "UMComFeed.h"
 #import "UMComLoginManager.h"
+#import "WXApi.h"
 
 #define MaxShareLength 139
 #define MaxLinkLength 10
@@ -114,6 +115,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
+    
     static NSString *cellId = @"cellID";
     UMComCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     if (!cell) {
@@ -147,6 +151,14 @@
 
 - (void)shareViewShow
 {
+    
+    if([WXApi isWXAppInstalled]) {
+        //装了展示出来
+    } else {
+        //没装不要在 UI 上展示
+        return;
+    }
+    
     [self removeFromSuperview];
     self.hidden = NO;
     
@@ -174,6 +186,9 @@
             statusBarFrameHeight = 20;
         }
     }
+    
+    
+    
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, window.frame.size.width, window.frame.size.height)];
     backgroundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];

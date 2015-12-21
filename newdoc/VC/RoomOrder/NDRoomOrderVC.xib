@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NDRoomOrderVC">
@@ -117,7 +117,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(89)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIS-oy-HML">
-                                    <rect key="frame" x="65" y="9" width="21" height="12"/>
+                                    <rect key="frame" x="65" y="9" width="20.5" height="12"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -221,7 +221,7 @@
                     <rect key="frame" x="0.0" y="227" width="320" height="301"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXW-e4-ucV">
-                            <rect key="frame" x="8" y="8" width="304" height="186"/>
+                            <rect key="frame" x="8" y="8" width="304" height="186.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="170" id="lDY-Ro-8N5"/>
@@ -254,7 +254,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务流程：免费预约 &gt; 准时报到 &gt; 医生安排加号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6S-Ef-gE3">
-                            <rect key="frame" x="8" y="202" width="258" height="15"/>
+                            <rect key="frame" x="20" y="202.5" width="292" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -265,12 +265,13 @@
                         <constraint firstItem="bR4-6G-nit" firstAttribute="top" secondItem="S6S-Ef-gE3" secondAttribute="bottom" constant="8" id="8E5-Wd-L80"/>
                         <constraint firstItem="qXW-e4-ucV" firstAttribute="top" secondItem="Z6s-kM-Bjb" secondAttribute="top" constant="8" id="Cuk-3c-9py"/>
                         <constraint firstAttribute="trailing" secondItem="bR4-6G-nit" secondAttribute="trailing" constant="8" id="Hvx-Yo-R3g"/>
+                        <constraint firstAttribute="trailing" secondItem="S6S-Ef-gE3" secondAttribute="trailing" constant="8" id="RNa-WL-pT0"/>
                         <constraint firstItem="jGI-9v-IGw" firstAttribute="centerX" secondItem="Z6s-kM-Bjb" secondAttribute="centerX" constant="3" id="WWB-NM-WbH"/>
                         <constraint firstAttribute="trailing" secondItem="qXW-e4-ucV" secondAttribute="trailing" constant="8" id="XoU-IQ-muJ"/>
                         <constraint firstItem="bR4-6G-nit" firstAttribute="leading" secondItem="Z6s-kM-Bjb" secondAttribute="leading" constant="8" id="Yve-6s-Ok1"/>
                         <constraint firstItem="qXW-e4-ucV" firstAttribute="leading" secondItem="Z6s-kM-Bjb" secondAttribute="leading" constant="8" id="aqf-St-nBS"/>
                         <constraint firstAttribute="bottom" secondItem="jGI-9v-IGw" secondAttribute="bottom" constant="8" id="dhC-o5-cbe"/>
-                        <constraint firstItem="S6S-Ef-gE3" firstAttribute="leading" secondItem="Z6s-kM-Bjb" secondAttribute="leading" constant="8" id="g1E-qG-HCj"/>
+                        <constraint firstItem="S6S-Ef-gE3" firstAttribute="leading" secondItem="Z6s-kM-Bjb" secondAttribute="leading" constant="20" id="g1E-qG-HCj"/>
                         <constraint firstItem="S6S-Ef-gE3" firstAttribute="top" secondItem="qXW-e4-ucV" secondAttribute="bottom" constant="8" id="hGl-3z-ADx"/>
                         <constraint firstItem="jGI-9v-IGw" firstAttribute="top" secondItem="bR4-6G-nit" secondAttribute="bottom" constant="8" id="sdA-t8-WcB"/>
                     </constraints>
@@ -306,6 +307,6 @@
     <resources>
         <image name="attention" width="27" height="14"/>
         <image name="attention_select" width="43" height="15"/>
-        <image name="icon_placeHolder" width="145" height="145"/>
+        <image name="icon_placeHolder" width="62" height="62"/>
     </resources>
 </document>

@@ -19,6 +19,7 @@
 #import "UMComClickActionDelegate.h"
 #import "UMComScrollViewDelegate.h"
 #import "UMComFeed.h"
+#import "WXApi.h"
 
 @interface UMComFeedTableView()<UMComRefreshViewDelegate>
 
@@ -92,6 +93,9 @@
 {
     static NSString * cellIdentifier = @"FeedsTableViewCell";
     UMComFeedsTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.delegate = self.clickActionDelegate;
     if (indexPath.row < self.feedStyleList.count) {

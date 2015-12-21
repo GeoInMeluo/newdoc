@@ -30,6 +30,7 @@
 #import "UMComFeedDetailViewController.h"
 #import "UMComWebViewController.h"
 #import "UMComSession.h"
+#import "WXApi.h"
 
 @interface UMComFeedTableViewController ()<NSFetchedResultsControllerDelegate,UITextFieldDelegate,UMComClickActionDelegate> {
     
@@ -69,6 +70,7 @@
     [[UIApplication sharedApplication].keyWindow addSubview:self.editButton];
     
     self.navigationItem.leftBarButtonItem = nil;
+    
     
 }
 

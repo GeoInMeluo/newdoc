@@ -10,5 +10,8 @@
 
 @interface NDRoomTempCellTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIImageView *iv;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblIntro;
 
 @end

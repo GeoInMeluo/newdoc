@@ -38,7 +38,6 @@
 #import "UMComRefreshView.h"
 #import "UMComUser+UMComManagedObject.h"
 
-
 typedef enum {
     FeedType = 0,
     CommentType = 1
@@ -239,6 +238,7 @@ static const CGFloat kLikeViewHeight = 30;
     if (indexPath.section == 0) {
         static NSString * cellIdentifier = @"FeedsTableViewCell";
         UMComFeedsTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.delegate = self.feedsTableView.clickActionDelegate;
         [cell reloadFeedWithfeedStyle:self.feedStyle tableView:tableView cellForRowAtIndexPath:indexPath];
@@ -251,6 +251,7 @@ static const CGFloat kLikeViewHeight = 30;
     }else{
         static NSString *cellID = @"CommentTableViewCell";
         UMComCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UMComComment *comment = nil;
         UMComMutiStyleTextView *styleView = nil;

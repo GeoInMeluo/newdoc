@@ -44,7 +44,7 @@
     self.title = @"注册";
     
     self.btnVerifyCode.layer.masksToBounds = YES;
-    self.btnVerifyCode.layer.cornerRadius = 5;
+    self.btnVerifyCode.layer.cornerRadius = self.btnVerifyCode.height / 2;
     
     self.btnRegist.layer.cornerRadius = 5;
     self.btnRegist.layer.masksToBounds = YES;
