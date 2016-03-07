@@ -41,8 +41,8 @@ VcClassName * vc = [[VcClassName alloc] init]; \
 #define kRefreshFooter 1
 
 
-//#define kHostStr @"http://api.xinyijk.com"
-#define kHostStr @"http://newdoc.meluo.net"
+#define kHostStr @"http://api.xinyijk.com"
+//#define kHostStr @"http://newdoc.meluo.net"
 
 #define kVersion 1.0
 

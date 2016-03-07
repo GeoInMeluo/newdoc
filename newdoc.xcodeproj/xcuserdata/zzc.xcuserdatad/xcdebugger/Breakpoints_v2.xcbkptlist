@@ -83,13 +83,13 @@
                   symbolName = "-[NDPersonalInfo actionSheetDidFinished:]"
                   moduleName = "newdoc"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zzc/Desktop/meluo/newdoc_ios/newdoc/VC/PersonalInfo/NDPersonalInfo.m"
-                  timestampString = "472107032.286565"
+                  urlString = "file:///Users/zzc/Desktop/meluo/%E6%96%B0%E5%8C%BB%E8%AF%8A%E5%AE%A4/newdoc_ios/newdoc/VC/PersonalInfo/NDPersonalInfo.m"
+                  timestampString = "473173242.252726"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "172"
                   endingLineNumber = "172"
-                  offsetFromSymbolStart = "250">
+                  offsetFromSymbolStart = "236">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -98,13 +98,13 @@
                   symbolName = "__41-[NDPersonalInfo actionSheetDidFinished:]_block_invoke"
                   moduleName = "newdoc"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zzc/Desktop/meluo/newdoc_ios/newdoc/VC/PersonalInfo/NDPersonalInfo.m"
-                  timestampString = "472107032.286794"
+                  urlString = "file:///Users/zzc/Desktop/meluo/%E6%96%B0%E5%8C%BB%E8%AF%8A%E5%AE%A4/newdoc_ios/newdoc/VC/PersonalInfo/NDPersonalInfo.m"
+                  timestampString = "473173242.253141"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "173"
                   endingLineNumber = "173"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "44">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -170,6 +170,22 @@
             startingLineNumber = "42"
             endingLineNumber = "42"
             landmarkName = "-setupUI"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "newdoc/Network/NDNetManager.m"
+            timestampString = "473173140.13505"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-get:parameters:success:failure:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
